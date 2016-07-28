@@ -3,13 +3,18 @@ from grpc.beta import implementations
 import ems_grpc_pb2
 
 class CiscoGRPCClient(object):
-    def __init__(self, host, port, timeout, user, password, creds, options):
-        self._target = '%s:%d' % (host, port)
-        self._creds = implementations.ssl_channel_credentials(creds)
-        self._options = options
-        channel = grpc.secure_channel(
-        self._target, self._creds, (('grpc.ssl_target_name_override', self._options,),))
-        self._channel = implementations.Channel(channel)
+    def __init__(self, host, port, timeout, user, password, creds=None, options=None):
+        if creds != None:
+            self._target = '%s:%d' % (host, port)
+            self._creds = implementations.ssl_channel_credentials(creds)
+            self._options = options
+            channel = grpc.secure_channel(
+            self._target, self._creds, (('grpc.ssl_target_name_override', self._options,),))
+            self._channel = implementations.Channel(channel)
+        else:
+            self._host = host
+            self._port = port
+            self._channel = implementations.insecure_channel(self._host, self._port)
         self._stub = ems_grpc_pb2.beta_create_gRPCConfigOper_stub(self._channel)
         self._timeout = int(timeout)
         self._metadata = [('username', user), ('password', password)]

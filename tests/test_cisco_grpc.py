@@ -1,5 +1,7 @@
 import unittest
-from cisco_grpc_client import CiscoGRPCClient
+import sys
+sys.path.insert(0, '../')
+from client.cisco_grpc_client_insecure import CiscoGRPCClient
 import json
 
 
@@ -25,11 +27,6 @@ class CiscoGRPCClientcase(unittest.TestCase):
         yangjsonmerge = '{"Cisco-IOS-XR-ip-static-cfg:router-static": {"default-vrf": {"address-family": {"vrfipv4": {"vrf-unicast": {"vrf-prefixes": {"vrf-prefix": [{"prefix": "1.2.3.6", "vrf-route": {"vrf-next-hop-table": {"vrf-next-hop-next-hop-address": [{"next-hop-address": "10.0.2.2"}]}}, "prefix-length": 32}]}}}}}}}'
         response = self.client.mergeconfig(yangjsonmerge)
         self.assertEqual(response.errors, u'')
-        path = '{"Cisco-IOS-XR-ip-static-cfg:router-static": [null]}'
-        result = self.client.getconfig(path)
-        result = json.dumps(json.loads(result))
-        test_result = '{"Cisco-IOS-XR-ip-static-cfg:router-static": {"default-vrf": {"address-family": {"vrfipv4": {"vrf-unicast": {"vrf-prefixes": {"vrf-prefix": [{"prefix": "0.0.0.0", "vrf-route": {"vrf-next-hop-table": {"vrf-next-hop-next-hop-address": [{"next-hop-address": "10.0.2.2"}]}}, "prefix-length": 0}, {"prefix": "1.2.3.5", "vrf-route": {"vrf-next-hop-table": {"vrf-next-hop-next-hop-address": [{"next-hop-address": "10.0.2.2"}]}}, "prefix-length": 32}, {"prefix": "1.2.3.6", "vrf-route": {"vrf-next-hop-table": {"vrf-next-hop-next-hop-address": [{"next-hop-address": "10.0.2.2"}]}}, "prefix-length": 32}]}}}}}}}'
-        self.assertEqual(result, test_result)
     def tearDown(self):
         response = self.client.replaceconfig(self._result)
 if __name__ == '__main__':

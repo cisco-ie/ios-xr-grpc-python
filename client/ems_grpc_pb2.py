@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ems_grpc.proto',
   package='IOSXRExtensibleManagabilityService',
   syntax='proto3',
-  serialized_pb=_b('\n\x0e\x65ms_grpc.proto\x12\"IOSXRExtensibleManagabilityService\"4\n\rConfigGetArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpathjson\x18\x02 \x01(\t\"D\n\x0e\x43onfigGetReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"2\n\x0bGetOperArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpathjson\x18\x02 \x01(\t\"B\n\x0cGetOperReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"-\n\nConfigArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjson\x18\x02 \x01(\t\"/\n\x0b\x43onfigReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\"+\n\rCliConfigArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03\x63li\x18\x02 \x01(\t\"2\n\x0e\x43liConfigReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\"A\n\x11\x43ommitReplaceArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03\x63li\x18\x02 \x01(\t\x12\x10\n\x08yangjson\x18\x03 \x01(\t\"6\n\x12\x43ommitReplaceReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\"+\n\tCommitMsg\x12\r\n\x05label\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"W\n\nCommitArgs\x12:\n\x03msg\x18\x01 \x01(\x0b\x32-.IOSXRExtensibleManagabilityService.CommitMsg\x12\r\n\x05ReqId\x18\x02 \x01(\x03\"q\n\x0b\x43ommitReply\x12@\n\x06result\x18\x01 \x01(\x0e\x32\x30.IOSXRExtensibleManagabilityService.CommitResult\x12\x10\n\x08ResReqId\x18\x02 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"#\n\x12\x44iscardChangesArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\"7\n\x13\x44iscardChangesReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\")\n\x0bShowCmdArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03\x63li\x18\x02 \x01(\t\"D\n\x10ShowCmdTextReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06output\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"H\n\x10ShowCmdJSONReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x12\n\njsonoutput\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"A\n\x0e\x43reateSubsArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65ncode\x18\x02 \x01(\x03\x12\x10\n\x08subidstr\x18\x03 \x01(\t\"A\n\x0f\x43reateSubsReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t*3\n\x0c\x43ommitResult\x12\n\n\x06\x43HANGE\x10\x00\x12\r\n\tNO_CHANGE\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\x32\xc6\t\n\x0egRPCConfigOper\x12v\n\tGetConfig\x12\x31.IOSXRExtensibleManagabilityService.ConfigGetArgs\x1a\x32.IOSXRExtensibleManagabilityService.ConfigGetReply\"\x00\x30\x01\x12p\n\x0bMergeConfig\x12..IOSXRExtensibleManagabilityService.ConfigArgs\x1a/.IOSXRExtensibleManagabilityService.ConfigReply\"\x00\x12q\n\x0c\x44\x65leteConfig\x12..IOSXRExtensibleManagabilityService.ConfigArgs\x1a/.IOSXRExtensibleManagabilityService.ConfigReply\"\x00\x12r\n\rReplaceConfig\x12..IOSXRExtensibleManagabilityService.ConfigArgs\x1a/.IOSXRExtensibleManagabilityService.ConfigReply\"\x00\x12t\n\tCliConfig\x12\x31.IOSXRExtensibleManagabilityService.CliConfigArgs\x1a\x32.IOSXRExtensibleManagabilityService.CliConfigReply\"\x00\x12\x80\x01\n\rCommitReplace\x12\x35.IOSXRExtensibleManagabilityService.CommitReplaceArgs\x1a\x36.IOSXRExtensibleManagabilityService.CommitReplaceReply\"\x00\x12q\n\x0c\x43ommitConfig\x12..IOSXRExtensibleManagabilityService.CommitArgs\x1a/.IOSXRExtensibleManagabilityService.CommitReply\"\x00\x12\x89\x01\n\x14\x43onfigDiscardChanges\x12\x36.IOSXRExtensibleManagabilityService.DiscardChangesArgs\x1a\x37.IOSXRExtensibleManagabilityService.DiscardChangesReply\"\x00\x12p\n\x07GetOper\x12/.IOSXRExtensibleManagabilityService.GetOperArgs\x1a\x30.IOSXRExtensibleManagabilityService.GetOperReply\"\x00\x30\x01\x12y\n\nCreateSubs\x12\x32.IOSXRExtensibleManagabilityService.CreateSubsArgs\x1a\x33.IOSXRExtensibleManagabilityService.CreateSubsReply\"\x00\x30\x01\x32\x8a\x02\n\x08gRPCExec\x12~\n\x11ShowCmdTextOutput\x12/.IOSXRExtensibleManagabilityService.ShowCmdArgs\x1a\x34.IOSXRExtensibleManagabilityService.ShowCmdTextReply\"\x00\x30\x01\x12~\n\x11ShowCmdJSONOutput\x12/.IOSXRExtensibleManagabilityService.ShowCmdArgs\x1a\x34.IOSXRExtensibleManagabilityService.ShowCmdJSONReply\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0e\x65ms_grpc.proto\x12\"IOSXRExtensibleManagabilityService\"4\n\rConfigGetArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpathjson\x18\x02 \x01(\t\"D\n\x0e\x43onfigGetReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"2\n\x0bGetOperArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpathjson\x18\x02 \x01(\t\"B\n\x0cGetOperReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"-\n\nConfigArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjson\x18\x02 \x01(\t\"/\n\x0b\x43onfigReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\"+\n\rCliConfigArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03\x63li\x18\x02 \x01(\t\"2\n\x0e\x43liConfigReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\"A\n\x11\x43ommitReplaceArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03\x63li\x18\x02 \x01(\t\x12\x10\n\x08yangjson\x18\x03 \x01(\t\"6\n\x12\x43ommitReplaceReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\"+\n\tCommitMsg\x12\r\n\x05label\x18\x01 \x01(\t\x12\x0f\n\x07\x63omment\x18\x02 \x01(\t\"W\n\nCommitArgs\x12:\n\x03msg\x18\x01 \x01(\x0b\x32-.IOSXRExtensibleManagabilityService.CommitMsg\x12\r\n\x05ReqId\x18\x02 \x01(\x03\"q\n\x0b\x43ommitReply\x12@\n\x06result\x18\x01 \x01(\x0e\x32\x30.IOSXRExtensibleManagabilityService.CommitResult\x12\x10\n\x08ResReqId\x18\x02 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"#\n\x12\x44iscardChangesArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\"7\n\x13\x44iscardChangesReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\t\")\n\x0bShowCmdArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03\x63li\x18\x02 \x01(\t\"D\n\x10ShowCmdTextReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06output\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t\"H\n\x10ShowCmdJSONReply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x12\n\njsonoutput\x18\x02 \x01(\t\x12\x0e\n\x06\x65rrors\x18\x03 \x01(\t*3\n\x0c\x43ommitResult\x12\n\n\x06\x43HANGE\x10\x00\x12\r\n\tNO_CHANGE\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\x32\xcb\x08\n\x0egRPCConfigOper\x12v\n\tGetConfig\x12\x31.IOSXRExtensibleManagabilityService.ConfigGetArgs\x1a\x32.IOSXRExtensibleManagabilityService.ConfigGetReply\"\x00\x30\x01\x12p\n\x0bMergeConfig\x12..IOSXRExtensibleManagabilityService.ConfigArgs\x1a/.IOSXRExtensibleManagabilityService.ConfigReply\"\x00\x12q\n\x0c\x44\x65leteConfig\x12..IOSXRExtensibleManagabilityService.ConfigArgs\x1a/.IOSXRExtensibleManagabilityService.ConfigReply\"\x00\x12r\n\rReplaceConfig\x12..IOSXRExtensibleManagabilityService.ConfigArgs\x1a/.IOSXRExtensibleManagabilityService.ConfigReply\"\x00\x12t\n\tCliConfig\x12\x31.IOSXRExtensibleManagabilityService.CliConfigArgs\x1a\x32.IOSXRExtensibleManagabilityService.CliConfigReply\"\x00\x12\x80\x01\n\rCommitReplace\x12\x35.IOSXRExtensibleManagabilityService.CommitReplaceArgs\x1a\x36.IOSXRExtensibleManagabilityService.CommitReplaceReply\"\x00\x12q\n\x0c\x43ommitConfig\x12..IOSXRExtensibleManagabilityService.CommitArgs\x1a/.IOSXRExtensibleManagabilityService.CommitReply\"\x00\x12\x89\x01\n\x14\x43onfigDiscardChanges\x12\x36.IOSXRExtensibleManagabilityService.DiscardChangesArgs\x1a\x37.IOSXRExtensibleManagabilityService.DiscardChangesReply\"\x00\x12p\n\x07GetOper\x12/.IOSXRExtensibleManagabilityService.GetOperArgs\x1a\x30.IOSXRExtensibleManagabilityService.GetOperReply\"\x00\x30\x01\x32\x8a\x02\n\x08gRPCExec\x12~\n\x11ShowCmdTextOutput\x12/.IOSXRExtensibleManagabilityService.ShowCmdArgs\x1a\x34.IOSXRExtensibleManagabilityService.ShowCmdTextReply\"\x00\x30\x01\x12~\n\x11ShowCmdJSONOutput\x12/.IOSXRExtensibleManagabilityService.ShowCmdArgs\x1a\x34.IOSXRExtensibleManagabilityService.ShowCmdJSONReply\"\x00\x30\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -45,8 +45,8 @@ _COMMITRESULT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1278,
-  serialized_end=1329,
+  serialized_start=1144,
+  serialized_end=1195,
 )
 _sym_db.RegisterEnumDescriptor(_COMMITRESULT)
 
@@ -775,96 +775,6 @@ _SHOWCMDJSONREPLY = _descriptor.Descriptor(
   serialized_end=1142,
 )
 
-
-_CREATESUBSARGS = _descriptor.Descriptor(
-  name='CreateSubsArgs',
-  full_name='IOSXRExtensibleManagabilityService.CreateSubsArgs',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ReqId', full_name='IOSXRExtensibleManagabilityService.CreateSubsArgs.ReqId', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='encode', full_name='IOSXRExtensibleManagabilityService.CreateSubsArgs.encode', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='subidstr', full_name='IOSXRExtensibleManagabilityService.CreateSubsArgs.subidstr', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1144,
-  serialized_end=1209,
-)
-
-
-_CREATESUBSREPLY = _descriptor.Descriptor(
-  name='CreateSubsReply',
-  full_name='IOSXRExtensibleManagabilityService.CreateSubsReply',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ResReqId', full_name='IOSXRExtensibleManagabilityService.CreateSubsReply.ResReqId', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='IOSXRExtensibleManagabilityService.CreateSubsReply.data', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='errors', full_name='IOSXRExtensibleManagabilityService.CreateSubsReply.errors', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1211,
-  serialized_end=1276,
-)
-
 _COMMITARGS.fields_by_name['msg'].message_type = _COMMITMSG
 _COMMITREPLY.fields_by_name['result'].enum_type = _COMMITRESULT
 DESCRIPTOR.message_types_by_name['ConfigGetArgs'] = _CONFIGGETARGS
@@ -885,8 +795,6 @@ DESCRIPTOR.message_types_by_name['DiscardChangesReply'] = _DISCARDCHANGESREPLY
 DESCRIPTOR.message_types_by_name['ShowCmdArgs'] = _SHOWCMDARGS
 DESCRIPTOR.message_types_by_name['ShowCmdTextReply'] = _SHOWCMDTEXTREPLY
 DESCRIPTOR.message_types_by_name['ShowCmdJSONReply'] = _SHOWCMDJSONREPLY
-DESCRIPTOR.message_types_by_name['CreateSubsArgs'] = _CREATESUBSARGS
-DESCRIPTOR.message_types_by_name['CreateSubsReply'] = _CREATESUBSREPLY
 DESCRIPTOR.enum_types_by_name['CommitResult'] = _COMMITRESULT
 
 ConfigGetArgs = _reflection.GeneratedProtocolMessageType('ConfigGetArgs', (_message.Message,), dict(
@@ -1015,209 +923,13 @@ ShowCmdJSONReply = _reflection.GeneratedProtocolMessageType('ShowCmdJSONReply', 
   ))
 _sym_db.RegisterMessage(ShowCmdJSONReply)
 
-CreateSubsArgs = _reflection.GeneratedProtocolMessageType('CreateSubsArgs', (_message.Message,), dict(
-  DESCRIPTOR = _CREATESUBSARGS,
-  __module__ = 'ems_grpc_pb2'
-  # @@protoc_insertion_point(class_scope:IOSXRExtensibleManagabilityService.CreateSubsArgs)
-  ))
-_sym_db.RegisterMessage(CreateSubsArgs)
 
-CreateSubsReply = _reflection.GeneratedProtocolMessageType('CreateSubsReply', (_message.Message,), dict(
-  DESCRIPTOR = _CREATESUBSREPLY,
-  __module__ = 'ems_grpc_pb2'
-  # @@protoc_insertion_point(class_scope:IOSXRExtensibleManagabilityService.CreateSubsReply)
-  ))
-_sym_db.RegisterMessage(CreateSubsReply)
-
-
-import grpc
+import abc
+import six
 from grpc.beta import implementations as beta_implementations
 from grpc.beta import interfaces as beta_interfaces
 from grpc.framework.common import cardinality
 from grpc.framework.interfaces.face import utilities as face_utilities
-
-
-class gRPCConfigOperStub(object):
-
-  def __init__(self, channel):
-    """Constructor.
-
-    Args:
-      channel: A grpc.Channel.
-    """
-    self.GetConfig = channel.unary_stream(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/GetConfig',
-        request_serializer=ConfigGetArgs.SerializeToString,
-        response_deserializer=ConfigGetReply.FromString,
-        )
-    self.MergeConfig = channel.unary_unary(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/MergeConfig',
-        request_serializer=ConfigArgs.SerializeToString,
-        response_deserializer=ConfigReply.FromString,
-        )
-    self.DeleteConfig = channel.unary_unary(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/DeleteConfig',
-        request_serializer=ConfigArgs.SerializeToString,
-        response_deserializer=ConfigReply.FromString,
-        )
-    self.ReplaceConfig = channel.unary_unary(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/ReplaceConfig',
-        request_serializer=ConfigArgs.SerializeToString,
-        response_deserializer=ConfigReply.FromString,
-        )
-    self.CliConfig = channel.unary_unary(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/CliConfig',
-        request_serializer=CliConfigArgs.SerializeToString,
-        response_deserializer=CliConfigReply.FromString,
-        )
-    self.CommitReplace = channel.unary_unary(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/CommitReplace',
-        request_serializer=CommitReplaceArgs.SerializeToString,
-        response_deserializer=CommitReplaceReply.FromString,
-        )
-    self.CommitConfig = channel.unary_unary(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/CommitConfig',
-        request_serializer=CommitArgs.SerializeToString,
-        response_deserializer=CommitReply.FromString,
-        )
-    self.ConfigDiscardChanges = channel.unary_unary(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/ConfigDiscardChanges',
-        request_serializer=DiscardChangesArgs.SerializeToString,
-        response_deserializer=DiscardChangesReply.FromString,
-        )
-    self.GetOper = channel.unary_stream(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/GetOper',
-        request_serializer=GetOperArgs.SerializeToString,
-        response_deserializer=GetOperReply.FromString,
-        )
-    self.CreateSubs = channel.unary_stream(
-        '/IOSXRExtensibleManagabilityService.gRPCConfigOper/CreateSubs',
-        request_serializer=CreateSubsArgs.SerializeToString,
-        response_deserializer=CreateSubsReply.FromString,
-        )
-
-
-class gRPCConfigOperServicer(object):
-
-  def GetConfig(self, request, context):
-    """Configuration related commands
-
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def MergeConfig(self, request, context):
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def DeleteConfig(self, request, context):
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ReplaceConfig(self, request, context):
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def CliConfig(self, request, context):
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def CommitReplace(self, request, context):
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def CommitConfig(self, request, context):
-    """Do we need implicit or explicit commit
-
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ConfigDiscardChanges(self, request, context):
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def GetOper(self, request, context):
-    """Get only returns oper data
-
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def CreateSubs(self, request, context):
-    """Get Telemetry Data
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-
-def add_gRPCConfigOperServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'GetConfig': grpc.unary_stream_rpc_method_handler(
-          servicer.GetConfig,
-          request_deserializer=ConfigGetArgs.FromString,
-          response_serializer=ConfigGetReply.SerializeToString,
-      ),
-      'MergeConfig': grpc.unary_unary_rpc_method_handler(
-          servicer.MergeConfig,
-          request_deserializer=ConfigArgs.FromString,
-          response_serializer=ConfigReply.SerializeToString,
-      ),
-      'DeleteConfig': grpc.unary_unary_rpc_method_handler(
-          servicer.DeleteConfig,
-          request_deserializer=ConfigArgs.FromString,
-          response_serializer=ConfigReply.SerializeToString,
-      ),
-      'ReplaceConfig': grpc.unary_unary_rpc_method_handler(
-          servicer.ReplaceConfig,
-          request_deserializer=ConfigArgs.FromString,
-          response_serializer=ConfigReply.SerializeToString,
-      ),
-      'CliConfig': grpc.unary_unary_rpc_method_handler(
-          servicer.CliConfig,
-          request_deserializer=CliConfigArgs.FromString,
-          response_serializer=CliConfigReply.SerializeToString,
-      ),
-      'CommitReplace': grpc.unary_unary_rpc_method_handler(
-          servicer.CommitReplace,
-          request_deserializer=CommitReplaceArgs.FromString,
-          response_serializer=CommitReplaceReply.SerializeToString,
-      ),
-      'CommitConfig': grpc.unary_unary_rpc_method_handler(
-          servicer.CommitConfig,
-          request_deserializer=CommitArgs.FromString,
-          response_serializer=CommitReply.SerializeToString,
-      ),
-      'ConfigDiscardChanges': grpc.unary_unary_rpc_method_handler(
-          servicer.ConfigDiscardChanges,
-          request_deserializer=DiscardChangesArgs.FromString,
-          response_serializer=DiscardChangesReply.SerializeToString,
-      ),
-      'GetOper': grpc.unary_stream_rpc_method_handler(
-          servicer.GetOper,
-          request_deserializer=GetOperArgs.FromString,
-          response_serializer=GetOperReply.SerializeToString,
-      ),
-      'CreateSubs': grpc.unary_stream_rpc_method_handler(
-          servicer.CreateSubs,
-          request_deserializer=CreateSubsArgs.FromString,
-          response_serializer=CreateSubsReply.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'IOSXRExtensibleManagabilityService.gRPCConfigOper', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
-
 
 class BetagRPCConfigOperServicer(object):
   def GetConfig(self, request, context):
@@ -1247,84 +959,89 @@ class BetagRPCConfigOperServicer(object):
 
     """
     context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-  def CreateSubs(self, request, context):
-    """Get Telemetry Data
-    """
-    context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-
 
 class BetagRPCConfigOperStub(object):
-  def GetConfig(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def GetConfig(self, request, timeout):
     """Configuration related commands
 
     """
     raise NotImplementedError()
-  def MergeConfig(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def MergeConfig(self, request, timeout):
     raise NotImplementedError()
   MergeConfig.future = None
-  def DeleteConfig(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def DeleteConfig(self, request, timeout):
     raise NotImplementedError()
   DeleteConfig.future = None
-  def ReplaceConfig(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def ReplaceConfig(self, request, timeout):
     raise NotImplementedError()
   ReplaceConfig.future = None
-  def CliConfig(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def CliConfig(self, request, timeout):
     raise NotImplementedError()
   CliConfig.future = None
-  def CommitReplace(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def CommitReplace(self, request, timeout):
     raise NotImplementedError()
   CommitReplace.future = None
-  def CommitConfig(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def CommitConfig(self, request, timeout):
     """Do we need implicit or explicit commit
 
     """
     raise NotImplementedError()
   CommitConfig.future = None
-  def ConfigDiscardChanges(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def ConfigDiscardChanges(self, request, timeout):
     raise NotImplementedError()
   ConfigDiscardChanges.future = None
-  def GetOper(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def GetOper(self, request, timeout):
     """Get only returns oper data
 
     """
     raise NotImplementedError()
-  def CreateSubs(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
-    """Get Telemetry Data
-    """
-    raise NotImplementedError()
-
 
 def beta_create_gRPCConfigOper_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
   request_deserializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): CliConfigArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): CommitArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): CommitReplaceArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): DiscardChangesArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CreateSubs'): CreateSubsArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ConfigArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ConfigGetArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): GetOperArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ConfigArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ConfigArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): ems_grpc_pb2.CliConfigArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): ems_grpc_pb2.CommitArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): ems_grpc_pb2.CommitReplaceArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): ems_grpc_pb2.DiscardChangesArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ems_grpc_pb2.ConfigArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ems_grpc_pb2.ConfigGetArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): ems_grpc_pb2.GetOperArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ems_grpc_pb2.ConfigArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ems_grpc_pb2.ConfigArgs.FromString,
   }
   response_serializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): CliConfigReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): CommitReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): CommitReplaceReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): DiscardChangesReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CreateSubs'): CreateSubsReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ConfigReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ConfigGetReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): GetOperReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ConfigReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ConfigReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): ems_grpc_pb2.CliConfigReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): ems_grpc_pb2.CommitReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): ems_grpc_pb2.CommitReplaceReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): ems_grpc_pb2.DiscardChangesReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ems_grpc_pb2.ConfigReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ems_grpc_pb2.ConfigGetReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): ems_grpc_pb2.GetOperReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ems_grpc_pb2.ConfigReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ems_grpc_pb2.ConfigReply.SerializeToString,
   }
   method_implementations = {
     ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): face_utilities.unary_unary_inline(servicer.CliConfig),
     ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): face_utilities.unary_unary_inline(servicer.CommitConfig),
     ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): face_utilities.unary_unary_inline(servicer.CommitReplace),
     ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): face_utilities.unary_unary_inline(servicer.ConfigDiscardChanges),
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CreateSubs'): face_utilities.unary_stream_inline(servicer.CreateSubs),
     ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): face_utilities.unary_unary_inline(servicer.DeleteConfig),
     ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): face_utilities.unary_stream_inline(servicer.GetConfig),
     ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): face_utilities.unary_stream_inline(servicer.GetOper),
@@ -1334,38 +1051,52 @@ def beta_create_gRPCConfigOper_server(servicer, pool=None, pool_size=None, defau
   server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
   return beta_implementations.server(method_implementations, options=server_options)
 
-
 def beta_create_gRPCConfigOper_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
   request_serializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): CliConfigArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): CommitArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): CommitReplaceArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): DiscardChangesArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CreateSubs'): CreateSubsArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ConfigArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ConfigGetArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): GetOperArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ConfigArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ConfigArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): ems_grpc_pb2.CliConfigArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): ems_grpc_pb2.CommitArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): ems_grpc_pb2.CommitReplaceArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): ems_grpc_pb2.DiscardChangesArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ems_grpc_pb2.ConfigArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ems_grpc_pb2.ConfigGetArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): ems_grpc_pb2.GetOperArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ems_grpc_pb2.ConfigArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ems_grpc_pb2.ConfigArgs.SerializeToString,
   }
   response_deserializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): CliConfigReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): CommitReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): CommitReplaceReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): DiscardChangesReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CreateSubs'): CreateSubsReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ConfigReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ConfigGetReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): GetOperReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ConfigReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ConfigReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CliConfig'): ems_grpc_pb2.CliConfigReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitConfig'): ems_grpc_pb2.CommitReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'CommitReplace'): ems_grpc_pb2.CommitReplaceReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ConfigDiscardChanges'): ems_grpc_pb2.DiscardChangesReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'DeleteConfig'): ems_grpc_pb2.ConfigReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetConfig'): ems_grpc_pb2.ConfigGetReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'GetOper'): ems_grpc_pb2.GetOperReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'MergeConfig'): ems_grpc_pb2.ConfigReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCConfigOper', 'ReplaceConfig'): ems_grpc_pb2.ConfigReply.FromString,
   }
   cardinalities = {
     'CliConfig': cardinality.Cardinality.UNARY_UNARY,
     'CommitConfig': cardinality.Cardinality.UNARY_UNARY,
     'CommitReplace': cardinality.Cardinality.UNARY_UNARY,
     'ConfigDiscardChanges': cardinality.Cardinality.UNARY_UNARY,
-    'CreateSubs': cardinality.Cardinality.UNARY_STREAM,
     'DeleteConfig': cardinality.Cardinality.UNARY_UNARY,
     'GetConfig': cardinality.Cardinality.UNARY_STREAM,
     'GetOper': cardinality.Cardinality.UNARY_STREAM,
@@ -1374,70 +1105,6 @@ def beta_create_gRPCConfigOper_stub(channel, host=None, metadata_transformer=Non
   }
   stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
   return beta_implementations.dynamic_stub(channel, 'IOSXRExtensibleManagabilityService.gRPCConfigOper', cardinalities, options=stub_options)
-
-
-class gRPCExecStub(object):
-  """
-  Should we seperate Exec from Config/Oper?
-
-
-  """
-
-  def __init__(self, channel):
-    """Constructor.
-
-    Args:
-      channel: A grpc.Channel.
-    """
-    self.ShowCmdTextOutput = channel.unary_stream(
-        '/IOSXRExtensibleManagabilityService.gRPCExec/ShowCmdTextOutput',
-        request_serializer=ShowCmdArgs.SerializeToString,
-        response_deserializer=ShowCmdTextReply.FromString,
-        )
-    self.ShowCmdJSONOutput = channel.unary_stream(
-        '/IOSXRExtensibleManagabilityService.gRPCExec/ShowCmdJSONOutput',
-        request_serializer=ShowCmdArgs.SerializeToString,
-        response_deserializer=ShowCmdJSONReply.FromString,
-        )
-
-
-class gRPCExecServicer(object):
-  """
-  Should we seperate Exec from Config/Oper?
-
-
-  """
-
-  def ShowCmdTextOutput(self, request, context):
-    """Exec commands
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ShowCmdJSONOutput(self, request, context):
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-
-def add_gRPCExecServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'ShowCmdTextOutput': grpc.unary_stream_rpc_method_handler(
-          servicer.ShowCmdTextOutput,
-          request_deserializer=ShowCmdArgs.FromString,
-          response_serializer=ShowCmdTextReply.SerializeToString,
-      ),
-      'ShowCmdJSONOutput': grpc.unary_stream_rpc_method_handler(
-          servicer.ShowCmdJSONOutput,
-          request_deserializer=ShowCmdArgs.FromString,
-          response_serializer=ShowCmdJSONReply.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'IOSXRExtensibleManagabilityService.gRPCExec', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
-
 
 class BetagRPCExecServicer(object):
   """
@@ -1452,29 +1119,31 @@ class BetagRPCExecServicer(object):
   def ShowCmdJSONOutput(self, request, context):
     context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
-
 class BetagRPCExecStub(object):
   """
   Should we seperate Exec from Config/Oper?
 
 
   """
-  def ShowCmdTextOutput(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def ShowCmdTextOutput(self, request, timeout):
     """Exec commands
     """
     raise NotImplementedError()
-  def ShowCmdJSONOutput(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+  def ShowCmdJSONOutput(self, request, timeout):
     raise NotImplementedError()
 
-
 def beta_create_gRPCExec_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
   request_deserializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ShowCmdArgs.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ShowCmdArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ems_grpc_pb2.ShowCmdArgs.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ems_grpc_pb2.ShowCmdArgs.FromString,
   }
   response_serializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ShowCmdJSONReply.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ShowCmdTextReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ems_grpc_pb2.ShowCmdJSONReply.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ems_grpc_pb2.ShowCmdTextReply.SerializeToString,
   }
   method_implementations = {
     ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): face_utilities.unary_stream_inline(servicer.ShowCmdJSONOutput),
@@ -1483,15 +1152,18 @@ def beta_create_gRPCExec_server(servicer, pool=None, pool_size=None, default_tim
   server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
   return beta_implementations.server(method_implementations, options=server_options)
 
-
 def beta_create_gRPCExec_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
+  import ems_grpc_pb2
   request_serializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ShowCmdArgs.SerializeToString,
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ShowCmdArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ems_grpc_pb2.ShowCmdArgs.SerializeToString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ems_grpc_pb2.ShowCmdArgs.SerializeToString,
   }
   response_deserializers = {
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ShowCmdJSONReply.FromString,
-    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ShowCmdTextReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdJSONOutput'): ems_grpc_pb2.ShowCmdJSONReply.FromString,
+    ('IOSXRExtensibleManagabilityService.gRPCExec', 'ShowCmdTextOutput'): ems_grpc_pb2.ShowCmdTextReply.FromString,
   }
   cardinalities = {
     'ShowCmdJSONOutput': cardinality.Cardinality.UNARY_STREAM,
@@ -1500,3 +1172,4 @@ def beta_create_gRPCExec_stub(channel, host=None, metadata_transformer=None, poo
   stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
   return beta_implementations.dynamic_stub(channel, 'IOSXRExtensibleManagabilityService.gRPCExec', cardinalities, options=stub_options)
 # @@protoc_insertion_point(module_scope)
+

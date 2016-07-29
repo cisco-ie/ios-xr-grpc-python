@@ -59,22 +59,6 @@ class CiscoGRPCClient(object):
             objects += response.yangjson
         return objects
 
-    def get_subscription(self, subid):
-        """Telemetry subscription function
-            :param data: Name of subscription
-            :type: string
-            :return: Returns telemetry stream
-            :rtype: Response object
-        """
-        sub_args = ems_grpc_pb2.CreateSubsArgs(ReqId=1, encode=3, subidstr=subid)
-        stream = self._stub.CreateSubs(sub_args, timeout=self._timeout, metadata=self._metadata)
-        self._channel.subscribe(self.connectivity_handler, True)
-        for segment in stream:
-            yield segment
-
-    def connectivity_handler(self, result):
-        print result
-
     def mergeconfig (self, yangjson):
         """Merge grpc call equivalent  of PATCH RESTconf call
             :param data: JSON

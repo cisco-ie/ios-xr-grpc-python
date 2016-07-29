@@ -50,7 +50,7 @@ scp cisco@192.168.1.2:/misc/config/grpc/ems.pem ./
 - Run the program
 
 ```
-python example.py
+python grpc_example.py
 ```
 
 

@@ -5,9 +5,12 @@ Author: Karthik Kumaravel
 Contact: kkumara3@cisco.com
 
 This is a small repo testing GRPC in python for the IOS-XR end node. This setup is currently working in the IOS-XRv on vagrant.
-To get started there are two examples here, one for MDT and one for grpc rpc calls.
 
-If you find any problems with this repo, please file a bug so I can fix it. If you need help, feel free to ping me.
+To get started with IOS-XRv on Vagrant: https://xrdocs.github.io/
+
+The example is a small python file showing how to set up the connection and use one of the rpc calls. Please look at the unit-testing and client page for more rpc calls.
+
+If you find any problems with this repo, please file a bug so I can fix it. If you need help, feel free to contact me. 
 
 
 GRPC Calls
@@ -41,6 +44,8 @@ grpc
 scp cisco@192.168.1.2:/misc/config/grpc/ems.pem ./
 ```
 
+(note if you don't want to use TLS, don't pass the cred and options)
+
 - If you are using your own box, change the parameters in the example.py file to have the proper authentication credentials.
 - Run the program
 
@@ -48,7 +53,6 @@ scp cisco@192.168.1.2:/misc/config/grpc/ems.pem ./
 python example.py
 ```
 
-(note if you don't want to use TLS, don't pass the cred and options)
 
 To be done
 --

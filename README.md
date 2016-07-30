@@ -4,11 +4,7 @@ Author: Karthik Kumaravel
 
 Contact: kkumara3@cisco.com
 
-This is a small repo testing GRPC in python for the IOS-XR end node. This setup is currently working in the IOS-XRv on vagrant.
-
-To get started with IOS-XRv on Vagrant: https://xrdocs.github.io/
-
-The example is a small python file showing how to set up the connection and use one of the rpc calls. Please look at the unit-testing and client page for more rpc calls.
+This is a small repo showing how to use GRPC in python for the IOS-XR end node.The repo is consisted of three main componenets, the compiled pb2 file from the IDL, a python client accessing the pb2 file, and an example python file. The example is a small python file showing how to set up the connection and use one of the rpc calls. Please look at the unit-testing and client page for more rpc calls. At the bottom of the repo, there is a walkthrough of how to create your own client. 
 
 If you find any problems with this repo, please file a bug so I can fix it. If you need help, feel free to contact me. 
 
@@ -53,6 +49,20 @@ scp cisco@192.168.1.2:/misc/config/grpc/ems.pem ./
 python grpc_example.py
 ```
 
+Getting here from the beginning
+--
+To create a client of your own there are a few steps to follow.
+
+- Download the proto file for IOS-XR's grpc: https://github.com/CiscoDevNet/grpc-getting-started
+- Follow the instructions to generate the client/server code in python using the grpc-getting-started's proto file: http://www.grpc.io/docs/tutorials/basic/python.html#generating-client-and-server-code
+- From here create a client, an example can be found here: http://www.grpc.io/docs/tutorials/basic/python.html#creating-the-client
+ -  At this point you should have a client similar to the one in this repo
+
+Other Useful Links
+--
+If you would like to test this all out with IOS-XRv, use the following link to request access to the vagrant box.
+
+https://xrdocs.github.io/
 
 To be done
 --

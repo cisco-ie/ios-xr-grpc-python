@@ -91,3 +91,16 @@ class CiscoGRPCClient(object):
         message = ems_grpc_pb2.ConfigArgs(yangjson= yangjson)
         response= self._stub.ReplaceConfig(message, self._timeout, metadata = self._metadata)
         return response
+    def getoper (self, path):
+        """ Get Oper call
+            :param data: JSON
+            :type data: str
+            :return: Return the response object
+            :rtype: Response stream object
+        """
+        message = ems_grpc_pb2.GetOperArgs(yangpathjson=path)
+        responses = self._stub.GetOper(message,self._timeout, metadata = self._metadata)
+        objects = ''
+        for response in responses:
+            objects += response.yangjson
+        return objects

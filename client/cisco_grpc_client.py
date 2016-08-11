@@ -104,3 +104,16 @@ class CiscoGRPCClient(object):
         for response in responses:
             objects += response.yangjson
         return objects
+
+    def showcmdtextoutput (self, cli):
+        """ Get of CLI show commands
+            :param data: cli show
+            :type data: str
+            :return: Return the response object
+            :rtype: str
+        """
+        stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
+        message = ems_grpc_pb2.ShowCmdArgs(cli = cli)
+        response = stub.ShowCmdTextOutput(message, self._timeout, metadata = self._metadata)
+
+

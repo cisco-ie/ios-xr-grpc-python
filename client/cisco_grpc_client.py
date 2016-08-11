@@ -114,7 +114,7 @@ class CiscoGRPCClient(object):
         """
         stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
         message = ems_grpc_pb2.ShowCmdArgs(cli = cli)
-        response = stub.ShowCmdTextOutput(message, self._timeout, metadata = self._metadata)
+        responses = stub.ShowCmdTextOutput(message, self._timeout, metadata = self._metadata)
         objects = ''
         for response in responses:
             objects += response.output
@@ -129,7 +129,7 @@ class CiscoGRPCClient(object):
         """
         stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
         message = ems_grpc_pb2.ShowCmdArgs(cli = cli)
-        response = stub.ShowCmdJSONOutput(message, self._timeout, metadata = self._metadata)
+        responses = stub.ShowCmdJSONOutput(message, self._timeout, metadata = self._metadata)
         objects = ''
         for response in responses:
             objects += response.jsonoutput

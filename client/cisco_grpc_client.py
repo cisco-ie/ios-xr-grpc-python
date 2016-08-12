@@ -104,3 +104,48 @@ class CiscoGRPCClient(object):
         for response in responses:
             objects += response.yangjson
         return objects
+
+    def cliconfig(self, cli):
+        """Post of CLI config commands in text
+            :param data: cli show
+            :type data: str
+            :return: Return the response object
+            :rtype: str
+        """
+        message = ems_grpc_pb2.CliConfigArgs(cli = cli)
+        response = self._stub.CliConfig(message, self._timeout, metadata = self._metadata)
+        return response
+
+    def showcmdtextoutput (self, cli):
+        """ Get of CLI show commands in text
+            :param data: cli show
+            :type data: str
+            :return: Return the response object
+            :rtype: str
+        """
+        stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
+        message = ems_grpc_pb2.ShowCmdArgs(cli = cli)
+        responses = stub.ShowCmdTextOutput(message, self._timeout, metadata = self._metadata)
+        objects = ''
+        for response in responses:
+            objects += response.output
+        return objects
+
+    def showcmdjsonoutput (self, cli):
+        """ Get of CLI show commands in json
+            :param data: cli show
+            :type data: str
+            :return: Return the response object
+            :rtype: str
+        """
+        stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
+        message = ems_grpc_pb2.ShowCmdArgs(cli = cli)
+        responses = stub.ShowCmdJSONOutput(message, self._timeout, metadata = self._metadata)
+        objects = ''
+        for response in responses:
+            objects += response.jsonoutput
+        return objects
+
+
+
+

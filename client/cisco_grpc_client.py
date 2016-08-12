@@ -105,6 +105,17 @@ class CiscoGRPCClient(object):
             objects += response.yangjson
         return objects
 
+    def cliconfig(self, cli):
+        """Post of CLI config commands in text
+            :param data: cli show
+            :type data: str
+            :return: Return the response object
+            :rtype: str
+        """
+        message = ems_grpc_pb2.CliConfigArgs(cli = cli)
+        response = self._stub.CliConfig(message, self._timeout, metadata = self._metadata)
+        return response
+
     def showcmdtextoutput (self, cli):
         """ Get of CLI show commands in text
             :param data: cli show

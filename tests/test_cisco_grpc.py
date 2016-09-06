@@ -1,7 +1,7 @@
 import unittest
 import sys
 sys.path.insert(0, '../')
-from client.cisco_grpc_client_insecure import CiscoGRPCClient
+from lib.cisco_grpc_client import CiscoGRPCClient
 import json
 
 

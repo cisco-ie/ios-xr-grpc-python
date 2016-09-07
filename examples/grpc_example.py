@@ -4,9 +4,15 @@ from lib.cisco_grpc_client import CiscoGRPCClient
 import json
 
 def main():
-    #creds = open('ems.pem').read()
-    #options='ems.cisco.com'
-    client = CiscoGRPCClient('11.1.1.10', 57777, 10, 'vagrant', 'vagrant')
+    '''
+    To not use tls we need to do 2 things. 
+    1. Comment the variables creds and options out
+    2. Remove creds and options CiscoGRPCClient
+    ex: client = CiscoGRPCClient('11.1.1.10', 57777, 10, 'vagrant', 'vagrant')
+    '''
+    creds = open('ems.pem').read()
+    options='ems.cisco.com'
+    client = CiscoGRPCClient('11.1.1.10', 57777, 10, 'vagrant', 'vagrant', creds, options)
     #Test 1: Test Get config json requests
     path = '{"Cisco-IOS-XR-ip-static-cfg:router-static": [null]}'
     result = client.getconfig(path)

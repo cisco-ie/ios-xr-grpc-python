@@ -48,7 +48,7 @@ scp cisco@192.168.1.2:/misc/config/grpc/ems.pem ./
 ```
 python grpc_example.py
 ```
-For a more indepth look, check out the wiki https://github.com/cisco-grpc-connection-libs/ios-xr-grpc-python/wiki
+For a more in-depth look, check out the wiki https://github.com/cisco-grpc-connection-libs/ios-xr-grpc-python/wiki
 
 Getting here from the beginning
 --

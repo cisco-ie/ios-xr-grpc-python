@@ -3,7 +3,7 @@ from grpc.beta import implementations
 import ems_grpc_pb2
 import protobuf_json
 import ems_grpc_pb2
-import telemetry_message_pb2
+import telemetry_pb2
 
 class CiscoGRPCClient(object):
     def __init__(self, host, port, timeout, user, password, creds=None, options=None):
@@ -62,7 +62,7 @@ class CiscoGRPCClient(object):
             objects += response.yangjson
         return objects
 
-    def get_subscription(self, sub_id):
+    def getsubscription(self, sub_id):
         """Telemetry subscription function
             :param sub_id: Subscription ID
             :type: string
@@ -71,16 +71,15 @@ class CiscoGRPCClient(object):
         """
         sub_args = ems_grpc_pb2.CreateSubsArgs(ReqId=1, encode=3, subidstr=sub_id)
         stream = self._stub.CreateSubs(sub_args, timeout=self._timeout, metadata=self._metadata)
-        self._channel.subscribe(self.connectivity_handler, True)
         for segment in stream:
             # Go straight for telemetry data
-            telemetry_pb = telemetry_message_pb2.Telemetry()
+            telemetry_pb = telemetry_pb2.Telemetry()
             telemetry_pb.ParseFromString(segment.data)
             # Return in JSON format instead of protobuf.
             yield protobuf_json.pb2json(telemetry_pb)
 
-    def connectivity_handler(self, result):
-        print result
+    def connectivityhandler(self, callback):
+        self._channel.subscribe(callback, True)
 
     def mergeconfig (self, yangjson):
         """Merge grpc call equivalent  of PATCH RESTconf call

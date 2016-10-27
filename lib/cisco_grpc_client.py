@@ -8,7 +8,7 @@ import telemetry_pb2
 class CiscoGRPCClient(object):
     def __init__(self, host, port, timeout, user, password, creds=None, options=None):
         """This class creates grpc calls using python.
-            :param username: Username for device login
+            :param user: Username for device login
             :param password: Password for device login
             :param host: The ip address for the device
             :param port: The port for the device
@@ -16,8 +16,8 @@ class CiscoGRPCClient(object):
             :param creds: Input of the pem file
             :param options: TLS server name
             :type password: str
-            :type username: str
-            :type server: str
+            :type user: str
+            :type host: str
             :type port: int
             :type timeout:int
             :type creds: str

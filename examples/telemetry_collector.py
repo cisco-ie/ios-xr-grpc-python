@@ -12,7 +12,7 @@ def print_connectivity(connectivity):
 	print connectivity
 
 # Change client details to match your environment.
-client = CiscoGRPCClient('10.200.96.16', 57400, 100, 'mdt', 'f33dm3d4t4')
+client = CiscoGRPCClient('localhost', 57777, 10, 'vagrant', 'vagrant')
 subscription_id = 'sub1'
 recv_count = 0
 # Handle connectivity changes.

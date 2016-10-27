@@ -1,3 +1,6 @@
+""" Basic gRPC getcall configuration. Shows how to set up the vairables
+for tls and how to put into the class and get information from the box.
+"""
 import sys
 sys.path.insert(0, '../')
 from lib.cisco_grpc_client import CiscoGRPCClient
@@ -5,7 +8,7 @@ import json
 
 def main():
     '''
-    To not use tls we need to do 2 things. 
+    To not use tls we need to do 2 things.
     1. Comment the variables creds and options out
     2. Remove creds and options CiscoGRPCClient
     ex: client = CiscoGRPCClient('11.1.1.10', 57777, 10, 'vagrant', 'vagrant')

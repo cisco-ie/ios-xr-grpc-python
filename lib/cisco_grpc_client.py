@@ -1,3 +1,25 @@
+# Copyright 2016 Cisco Systems All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#
+#     * Redistributions of source code must retain the above copyright
+# notice, this list of conditions and the following disclaimer.
+#
+# The contents of this file are licensed under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with the
+# License. You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+
 import grpc
 from grpc.beta import implementations
 import ems_grpc_pb2
@@ -6,9 +28,10 @@ import ems_grpc_pb2
 import telemetry_pb2
 
 class CiscoGRPCClient(object):
+    """This class creates grpc calls using python.
+    """
     def __init__(self, host, port, timeout, user, password, creds=None, options=None):
-        """This class creates grpc calls using python.
-            :param user: Username for device login
+        """:param user: Username for device login
             :param password: Password for device login
             :param host: The ip address for the device
             :param port: The port for the device
@@ -28,7 +51,7 @@ class CiscoGRPCClient(object):
             self._creds = implementations.ssl_channel_credentials(creds)
             self._options = options
             channel = grpc.secure_channel(
-            self._target, self._creds, (('grpc.ssl_target_name_override', self._options,),))
+                self._target, self._creds, (('grpc.ssl_target_name_override', self._options,),))
             self._channel = implementations.Channel(channel)
         else:
             self._host = host
@@ -56,13 +79,13 @@ class CiscoGRPCClient(object):
             :rtype: Response stream object
         """
         message = ems_grpc_pb2.ConfigGetArgs(yangpathjson=path)
-        responses = self._stub.GetConfig(message,self._timeout, metadata = self._metadata)
+        responses = self._stub.GetConfig(message, self._timeout, metadata=self._metadata)
         objects = ''
         for response in responses:
             objects += response.yangjson
         return objects
 
-    def getsubscription(self, sub_id):
+    def getsubscription(self, sub_id, unmarshal):
         """Telemetry subscription function
             :param sub_id: Subscription ID
             :type: string
@@ -72,48 +95,55 @@ class CiscoGRPCClient(object):
         sub_args = ems_grpc_pb2.CreateSubsArgs(ReqId=1, encode=3, subidstr=sub_id)
         stream = self._stub.CreateSubs(sub_args, timeout=self._timeout, metadata=self._metadata)
         for segment in stream:
-            # Go straight for telemetry data
-            telemetry_pb = telemetry_pb2.Telemetry()
-            telemetry_pb.ParseFromString(segment.data)
-            # Return in JSON format instead of protobuf.
-            yield protobuf_json.pb2json(telemetry_pb)
+            if not unmarshal:
+                yield segment
+            else:
+                # Go straight for telemetry data
+                telemetry_pb = telemetry_pb2.Telemetry()
+                telemetry_pb.ParseFromString(segment.data)
+                # Return in JSON format instead of protobuf.
+                yield protobuf_json.pb2json(telemetry_pb)
 
     def connectivityhandler(self, callback):
+        """Passing of a callback to monitor connectivety state updates.
+        :param callback: A callback for monitoring
+        :type: function
+        """
         self._channel.subscribe(callback, True)
 
-    def mergeconfig (self, yangjson):
+    def mergeconfig(self, yangjson):
         """Merge grpc call equivalent  of PATCH RESTconf call
             :param data: JSON
             :type data: str
             :return: Return the response object
             :rtype: Response object
         """
-        message = ems_grpc_pb2.ConfigArgs(yangjson= yangjson)
-        response = self._stub.MergeConfig(message, self._timeout, metadata = self._metadata)
+        message = ems_grpc_pb2.ConfigArgs(yangjson=yangjson)
+        response = self._stub.MergeConfig(message, self._timeout, metadata=self._metadata)
         return response
 
-    def deleteconfig (self, yangjson):
+    def deleteconfig(self, yangjson):
         """delete grpc call
             :param data: JSON
             :type data: str
             :return: Return the response object
             :rtype: Response object
         """
-        message = ems_grpc_pb2.ConfigArgs(yangjson= yangjson)
-        response = self._stub.DeleteConfig(message, self._timeout, metadata = self._metadata)
+        message = ems_grpc_pb2.ConfigArgs(yangjson=yangjson)
+        response = self._stub.DeleteConfig(message, self._timeout, metadata=self._metadata)
         return response
 
-    def replaceconfig (self, yangjson):
+    def replaceconfig(self, yangjson):
         """Replace grpc call equivalent of PUT in restconf
             :param data: JSON
             :type data: str
             :return: Return the response object
             :rtype: Response object
         """
-        message = ems_grpc_pb2.ConfigArgs(yangjson= yangjson)
-        response= self._stub.ReplaceConfig(message, self._timeout, metadata = self._metadata)
+        message = ems_grpc_pb2.ConfigArgs(yangjson=yangjson)
+        response = self._stub.ReplaceConfig(message, self._timeout, metadata=self._metadata)
         return response
-    def getoper (self, path):
+    def getoper(self, path):
         """ Get Oper call
             :param data: JSON
             :type data: str
@@ -121,7 +151,7 @@ class CiscoGRPCClient(object):
             :rtype: Response stream object
         """
         message = ems_grpc_pb2.GetOperArgs(yangpathjson=path)
-        responses = self._stub.GetOper(message,self._timeout, metadata = self._metadata)
+        responses = self._stub.GetOper(message, self._timeout, metadata=self._metadata)
         objects = ''
         for response in responses:
             objects += response.yangjson
@@ -134,11 +164,11 @@ class CiscoGRPCClient(object):
             :return: Return the response object
             :rtype: str
         """
-        message = ems_grpc_pb2.CliConfigArgs(cli = cli)
-        response = self._stub.CliConfig(message, self._timeout, metadata = self._metadata)
+        message = ems_grpc_pb2.CliConfigArgs(cli=cli)
+        response = self._stub.CliConfig(message, self._timeout, metadata=self._metadata)
         return response
 
-    def showcmdtextoutput (self, cli):
+    def showcmdtextoutput(self, cli):
         """ Get of CLI show commands in text
             :param data: cli show
             :type data: str
@@ -146,14 +176,14 @@ class CiscoGRPCClient(object):
             :rtype: str
         """
         stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
-        message = ems_grpc_pb2.ShowCmdArgs(cli = cli)
-        responses = stub.ShowCmdTextOutput(message, self._timeout, metadata = self._metadata)
+        message = ems_grpc_pb2.ShowCmdArgs(cli=cli)
+        responses = stub.ShowCmdTextOutput(message, self._timeout, metadata=self._metadata)
         objects = ''
         for response in responses:
             objects += response.output
         return objects
 
-    def showcmdjsonoutput (self, cli):
+    def showcmdjsonoutput(self, cli):
         """ Get of CLI show commands in json
             :param data: cli show
             :type data: str
@@ -161,13 +191,9 @@ class CiscoGRPCClient(object):
             :rtype: str
         """
         stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
-        message = ems_grpc_pb2.ShowCmdArgs(cli = cli)
-        responses = stub.ShowCmdJSONOutput(message, self._timeout, metadata = self._metadata)
+        message = ems_grpc_pb2.ShowCmdArgs(cli=cli)
+        responses = stub.ShowCmdJSONOutput(message, self._timeout, metadata=self._metadata)
         objects = ''
         for response in responses:
             objects += response.jsonoutput
         return objects
-
-
-
-

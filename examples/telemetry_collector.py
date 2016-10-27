@@ -18,7 +18,7 @@ recv_count = 0
 # Handle connectivity changes.
 client.connectivityhandler(print_connectivity)
 # Iterate over subscription recvs.
-for segment in client.getsubscription(subscription_id):
+for segment in client.getsubscription(subscription_id, unmarshal=True):
 	recv_count += 1
 	print json.dumps(segment, indent=4, separators=(',', ': '))
 	print 'End Telemetry Segment'

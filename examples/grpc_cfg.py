@@ -3,35 +3,65 @@ Note:
 This is an example to show replace and merge configs work with a get command.
 The example is using XRdocs vagrant topology for all the configurations
 '''
-
+from grpc.framework.interfaces.face.face import AbortionError
+import json
+from time import sleep
 import sys
 sys.path.insert(0, '../')
 from lib.cisco_grpc_client import CiscoGRPCClient
-import json
-from time import sleep
 
-class Example:
+
+class Example(object):
     def __init__(self):
-        self.client = CiscoGRPCClient('11.1.1.10', 57777, 10, 'vagrant', 'vagrant')
+        self.client = CiscoGRPCClient('127.0.0.1', 57777, 10, 'vagrant', 'vagrant')
     def get(self):
         path = '{"Cisco-IOS-XR-ipv4-bgp-cfg:bgp": [null]}'
         result = self.client.getconfig(path)
-        print result
+        try:
+            err, result = self.client.getconfig(path)
+            if err:
+                print err
+            print json.dumps(json.loads(result))
+        except AbortionError:
+            print(
+                'Unable to connect to local box, check your gRPC destination.'
+                )
 
     def replace(self):
         path = open('snips/bgp_start.json').read()
-        result = self.client.replaceconfig(path)
-        print result # If this is sucessful, then there should be no errors.
+        try:
+            response = self.client.replaceconfig(path)
+            if response.errors:
+                err = json.loads(response.errors)
+                print err
+        except AbortionError:
+            print(
+                'Unable to connect to local box, check your gRPC destination.'
+                )
 
     def merge(self):
         path = open('snips/bgp_merge.json').read()
-        result = self.client.mergeconfig(path)
-        print result # If this is sucessful, then there should be no errors.
+        try:
+            response = self.client.mergeconfig(path)
+            if response.errors:
+                err = json.loads(response.errors)
+                print err
+        except AbortionError:
+            print(
+                'Unable to connect to local box, check your gRPC destination.'
+                )
 
     def delete(self):
         path = open('snips/bgp_start.json').read()
-        result = self.client.deleteconfig(path)
-        print result # If this is sucessful, then there should be no errors.
+        try:
+            response = self.client.deleteconfig(path)
+            if response.errors:
+                err = json.loads(response.errors)
+                print err
+        except AbortionError:
+            print(
+                'Unable to connect to local box, check your gRPC destination.'
+                )
 
 def main():
     '''

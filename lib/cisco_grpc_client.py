@@ -80,10 +80,11 @@ class CiscoGRPCClient(object):
         """
         message = ems_grpc_pb2.ConfigGetArgs(yangpathjson=path)
         responses = self._stub.GetConfig(message, self._timeout, metadata=self._metadata)
-        objects = ''
+        objects, err = '', ''
         for response in responses:
             objects += response.yangjson
-        return objects
+            err += response.errors
+        return err, objects
 
     def getsubscription(self, sub_id, unmarshal):
         """Telemetry subscription function
@@ -152,9 +153,10 @@ class CiscoGRPCClient(object):
         """
         message = ems_grpc_pb2.GetOperArgs(yangpathjson=path)
         responses = self._stub.GetOper(message, self._timeout, metadata=self._metadata)
-        objects = ''
+        objects, err = '', ''
         for response in responses:
             objects += response.yangjson
+            err += response.errors
         return objects
 
     def cliconfig(self, cli):
@@ -178,9 +180,10 @@ class CiscoGRPCClient(object):
         stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
         message = ems_grpc_pb2.ShowCmdArgs(cli=cli)
         responses = stub.ShowCmdTextOutput(message, self._timeout, metadata=self._metadata)
-        objects = ''
+        objects, err = '', ''
         for response in responses:
             objects += response.output
+            err += response.errors
         return objects
 
     def showcmdjsonoutput(self, cli):
@@ -193,7 +196,8 @@ class CiscoGRPCClient(object):
         stub = ems_grpc_pb2.beta_create_gRPCExec_stub(self._channel)
         message = ems_grpc_pb2.ShowCmdArgs(cli=cli)
         responses = stub.ShowCmdJSONOutput(message, self._timeout, metadata=self._metadata)
-        objects = ''
+        objects, err = '', ''
         for response in responses:
             objects += response.jsonoutput
+            err += response.errors
         return objects

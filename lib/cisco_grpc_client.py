@@ -86,7 +86,7 @@ class CiscoGRPCClient(object):
             err += response.errors
         return err, objects
 
-    def getsubscription(self, sub_id, unmarshal):
+    def getsubscription(self, sub_id, unmarshal=True):
         """Telemetry subscription function
             :param sub_id: Subscription ID
             :type: string

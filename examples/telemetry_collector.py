@@ -18,7 +18,9 @@ recv_count = 0
 # Handle connectivity changes.
 client.connectivityhandler(print_connectivity)
 # Iterate over subscription recvs.
-for segment in client.getsubscription(subscription_id):
+for segment in client.getsubscription(subscription_id, unmarshal=True):
+    # unmarshal is an optional argument, default is unmarshal = True
+    # If unmarshal is false, out is in gpb k/v
 	recv_count += 1
 	print json.dumps(segment, indent=4, separators=(',', ': '))
 	print 'End Telemetry Segment'

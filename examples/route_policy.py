@@ -34,7 +34,9 @@ class RoutePolicy(object):
             :rtype: json object
         """
         path = '{"openconfig-routing-policy:routing-policy": [null]}'
-        result = self.client.getconfig(path)
+        err, result = self.client.getconfig(path)
+        if err:
+            print err
         policies = json.loads(result, object_pairs_hook=OrderedDict)
         return policies
 
@@ -69,7 +71,9 @@ class RoutePolicy(object):
             :rtype: json object
         """
         path = '{"openconfig-bgp:bgp": [null]}'
-        result = self.client.getconfig(path)
+        err, result = self.client.getconfig(path)
+        if err:
+            print err
         bgp = json.loads(result, object_pairs_hook=OrderedDict)
         return bgp
 

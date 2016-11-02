@@ -65,6 +65,10 @@ If you would like to test this all out with IOS-XRv, use the following link to r
 
 https://xrdocs.github.io/
 
+Projects that use the python client
+--
+[Solenoid](https://github.com/ios-xr/Solenoid)
+
 To be done
 --
 Here is a list of current work to be done

@@ -170,6 +170,20 @@ class CiscoGRPCClient(object):
         response = self._stub.CliConfig(message, self._timeout, metadata=self._metadata)
         return response
 
+    def commitreplace(self, cli="", yangjson=""):
+        """Post of CLI config commands in text
+            :param data: cli show or yang json
+            :type data: str or json
+            :return: Return the response object
+            :rtype: str
+        """
+        if not cli:
+        	message = ems_grpc_pb2.CommitReplaceArgs(yangjson=yangjson)
+        else:
+		message = ems_grpc_pb2.CommitReplaceArgs(cli=cli)
+        response = self._stub.CommitReplace(message, self._timeout, metadata=self._metadata)
+        return response
+
     def showcmdtextoutput(self, cli):
         """ Get of CLI show commands in text
             :param data: cli show

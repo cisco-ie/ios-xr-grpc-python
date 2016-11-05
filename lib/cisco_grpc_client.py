@@ -157,7 +157,7 @@ class CiscoGRPCClient(object):
         for response in responses:
             objects += response.yangjson
             err += response.errors
-        return objects
+        return err, objects
 
     def cliconfig(self, cli):
         """Post of CLI config commands in text
@@ -198,7 +198,7 @@ class CiscoGRPCClient(object):
         for response in responses:
             objects += response.output
             err += response.errors
-        return objects
+        return err, objects
 
     def showcmdjsonoutput(self, cli):
         """ Get of CLI show commands in json
@@ -214,4 +214,4 @@ class CiscoGRPCClient(object):
         for response in responses:
             objects += response.jsonoutput
             err += response.errors
-        return objects
+        return err, objects

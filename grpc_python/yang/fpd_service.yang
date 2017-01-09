@@ -1,0 +1,43 @@
+module fpd_service {
+  namespace "http://cisco.com/calvados/hwfpd";
+  prefix upgrade;
+
+  organization "Cisco Systems, Inc.";
+
+  contact
+    "Cisco Systems, Inc.
+     Customer Service
+
+     Postal: 170 West Tasman Drive
+     San Jose, CA 95134
+
+     Tel: +1 800 553-NETS
+
+     E-mail: cs-yang@cisco.com";
+
+  description 
+    "This module contains definitions
+     for the Calvados model objects.
+
+    Copyright (c) 2012-2016 by Cisco Systems, Inc.
+     All rights reserved.";
+
+  revision "2015-08-30" {
+    description "Initial version.";
+  }
+
+  list location {
+    key "loc";
+    config false;
+    leaf loc {
+      type string;
+    }
+    list fpd2 {
+      key "name";
+      config false;
+      leaf name {
+        type string;
+      }
+    }
+  }
+}

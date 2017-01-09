@@ -1,0 +1,42 @@
+module show_trace_vmm {
+  namespace "http://cisco.com/calvados/vm_manager";
+  prefix vm_managerh;
+  import show_trace {
+    prefix show_trace;
+  }
+  organization "Cisco Systems Inc.";
+  contact
+    "Cisco Systems, Inc.
+     Customer Service
+     
+     Postal: 170 West Tasman Drive
+     San Jose, CA 95134
+     
+     Tel: +1 800 553-NETS
+     
+     E-mail: cs-yang@cisco.com";
+
+  description 
+    "This module contains definitions
+     for the Calvados model objects.
+
+    This module contains a collection of YANG
+definitions for Cisco IOS-XR SysAdmin configuration.
+
+Copyright(c) 2012-2016 by Cisco Systems, Inc.
+All rights reserved.
+
+    Copyright (c) 2012-2016 by Cisco Systems, Inc.
+     All rights reserved.";
+  revision 2016-05-12 {
+    description
+      "Initial Version";
+  }
+
+  container vmm {
+    config false;
+    container vm_manager {
+      uses show_trace:traceable;
+    }
+  }
+}

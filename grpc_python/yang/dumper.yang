@@ -1,0 +1,47 @@
+module dumper {
+  namespace "http://www.cisco.com/calvados/dumper";
+  prefix dumper;
+  organization "Cisco Systems Inc.";
+  contact
+    "Cisco Systems, Inc.
+     Customer Service
+     
+     Postal: 170 West Tasman Drive
+     San Jose, CA 95134
+     
+     Tel: +1 800 553-NETS
+     
+     E-mail: cs-yang@cisco.com";
+
+  description 
+    "This module contains definitions
+     for the Calvados model objects.
+
+    This module contains a collection of YANG
+definitions for Cisco IOS-XR SysAdmin configuration.
+
+Copyright(c) 2015-2016 by Cisco Systems, Inc.
+All rights reserved.
+
+    Copyright (c) 2012-2016 by Cisco Systems, Inc.
+     All rights reserved.";
+  revision 2016-05-12 {
+    description
+      "Initial Version";
+  }
+
+  container exception {
+    list choice {
+      key "order";
+      leaf order {
+        type int32 {
+          range "1 .. 3";
+        }
+      }
+      leaf filepath {
+        type string;
+        mandatory true;
+      }
+    }
+  }
+}

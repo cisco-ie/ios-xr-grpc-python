@@ -1,0 +1,360 @@
+module Cisco-IOS-XR-sysadmin-instmgr-cfg {
+  namespace "http://cisco.com/calvados/Cisco-IOS-XR-sysadmin-instmgr-cfg";
+  prefix install;
+
+  organization "Cisco Systems, Inc.";
+
+  contact
+    "Cisco Systems, Inc.
+     Customer Service
+
+     Postal: 170 West Tasman Drive
+     San Jose, CA 95134
+
+     Tel: +1 800 553-NETS
+
+     E-mail: cs-yang@cisco.com";
+
+  description 
+    "This module contains definitions
+     for the Calvados model objects.
+
+    Install CLI support
+
+    Copyright (c) 2012-2016 by Cisco Systems, Inc.
+     All rights reserved.";
+
+  revision "2015-08-30" {
+    description "Initial version.";
+  }
+
+
+  typedef install_add_pkg_type {
+    type string {
+    }
+  }
+
+  typedef install_add_source_type {
+    type string {
+    }
+  }
+
+  typedef install_backup_zipfile {
+    type string {
+    }
+  }
+
+  typedef install_pkg_type {
+    type string {
+    }
+  }
+
+  typedef install_node_type {
+    type string {
+    }
+  }
+
+  typedef install_id_type {
+    type uint32 {
+    }
+  }
+
+  typedef install_log_id_type {
+    type uint32 {
+    }
+  }
+
+  typedef node_location_type {
+    type string {
+      pattern "((0?[0-9]|1[1-5])/(([rR][pP]|[lL][cC])?\\d{1,2}))(/[cC][pP][uU]0)?|all";
+    }
+    description
+      "A system location in Rack/Slot/Instance";
+  }
+
+  typedef install_which_file {
+    type string {
+    }
+  }
+  container install {
+    config false;
+    container inactive {
+      description
+        "Calvados inactive package(s) list for this node";
+      leaf-list si_inactive_output {
+        type string;
+      }
+    }
+    container prepare {
+      description
+        "Calvados prepared package(s) list for this node";
+      leaf-list si_prepare_output {
+        type string;
+      }
+    }
+    container package {
+      description
+        "Package Name(s) to get info for";
+      list pkg_list {
+        key "pkg_name";
+        leaf pkg_name {
+          type string;
+        }
+        container detail {
+          leaf-list si_package_detail_output {
+            type string;
+          }
+        }
+        container verbose {
+          leaf-list si_package_verbose_output {
+            type string;
+          }
+        }
+        leaf-list si_package_output {
+          type string;
+        }
+      }
+    }
+    container active {
+      description
+        "Calvados active package(s) list for this node";
+      leaf-list si_active_output {
+        type string;
+      }
+    }
+    container superseded {
+      description
+        "Calvados superseded package(s) list for this node";
+      leaf-list si_superseded_output {
+        type string;
+      }
+    }
+    container request {
+      description
+        "Calvados active packages list for this node";
+      leaf-list si_request {
+        type string;
+      }
+    }
+    container repository {
+      description
+        "Shows information about the install software repository.";
+      container all {
+        description
+          "shows contents of all the install software repositories";
+        leaf-list si_repository_all_output {
+          type string;
+        }
+      }
+      leaf-list si_repository_output {
+        type string;
+      }
+    }
+    container log {
+      list id {
+        key "opid";
+        leaf opid {
+          type install_log_id_type;
+        }
+        container detail {
+          leaf-list si_log_id_detail_output {
+            type string;
+          }
+        }
+        leaf-list si_log_id_output {
+          type string;
+        }
+      }
+      container reverse {
+        container detail {
+          leaf-list si_log_reverse_detail_output {
+            type string;
+          }
+        }
+        leaf-list si_log_reverse_output {
+          type string;
+        }
+      }
+      container detail {
+        leaf-list si_log_detail_output {
+          type string;
+        }
+      }
+      leaf-list si_log_output {
+        type string;
+      }
+    }
+    container which {
+      description
+        "Filename to get info for";
+      list file_list {
+        key "file_name";
+        leaf file_name {
+          type string {
+          }
+        }
+        container detail {
+          leaf-list si_which_detail_output {
+            type string;
+          }
+        }
+        leaf-list si_which_output {
+          type string;
+        }
+      }
+    }
+    container issu {
+      container internal {
+        description
+          "ISSU infrastructure internal state";
+        container ocu {
+          description
+            "OCU state";
+          leaf in-progress {
+            description
+              "True if there's an ISSU-via-OCU operation in progress";
+            type boolean;
+          }
+          leaf-list phase-one-nodes {
+            description
+              "Nodes upgraded during the first phase of ISSU";
+            type string;
+          }
+          leaf-list phase-two-nodes {
+            description
+              "Nodes upgraded during the second phase of ISSU";
+            type string;
+          }
+          leaf up-node-count {
+            description
+              "Number of nodes that are known to be up by the ISSU infrastructure";
+            type uint32;
+          }
+          leaf state {
+            description
+              "Current state of ISSU orchestration";
+            type enumeration {
+              enum "idle" {
+              }
+              enum "phase-one-starting" {
+              }
+              enum "phase-one-cmd-sent" {
+              }
+              enum "phase-one-done" {
+              }
+              enum "phase-one-reload-started" {
+              }
+              enum "phase-two-starting" {
+              }
+              enum "phase-two-cmd-sent" {
+              }
+              enum "phase-two-done" {
+              }
+              enum "phase-two-reload-started" {
+              }
+              enum "complete" {
+              }
+            }
+          }
+          leaf notification-state {
+            description
+              "Current status of notifications to ISSU-aware features";
+            type enumeration {
+              enum "not-started" {
+              }
+              enum "in-progress" {
+              }
+              enum "done" {
+              }
+            }
+          }
+          leaf notifications-in-progress {
+            description
+              "True if notifications to ISSU-aware features are currently in progress";
+            type boolean;
+          }
+          leaf operation {
+            description
+              "Install operation that triggered ISSU";
+            type enumeration {
+              enum "none" {
+              }
+              enum "prepare-issu" {
+              }
+              enum "activate-issu" {
+              }
+              enum "prepare-activate-issu" {
+              }
+              enum "deactivate-issu" {
+              }
+            }
+          }
+          leaf phase {
+            description
+              "Current ISSU phase";
+            type enumeration {
+              enum "one" {
+              }
+              enum "two" {
+              }
+            }
+          }
+          leaf reset-pending {
+            description
+              "True if a 'reset' of the ISSU state machine is pending";
+            type boolean;
+          }
+          leaf recovery-in-progress {
+            description
+              "True if the ISSU state machine is being recovered after a HA event";
+            type boolean;
+          }
+        }
+        container clients {
+          description
+            "ISSU state related to ISSU-aware features";
+          list client {
+            key "index";
+            leaf index {
+              description
+                "Internal index of this client";
+              type uint32;
+            }
+            leaf id {
+              description
+                "Unique identifier for this client";
+              type string;
+            }
+            leaf rx-ack {
+              description
+                "True if this client has acknowledged the current ISSU operation";
+              type boolean;
+            }
+            leaf rx-veto {
+              description
+                "True if this client is currently considered to be vetoing the current ISSU operation. This value may be changed if and when an explicit response is received from the client";
+              type boolean;
+            }
+            leaf rx-response {
+              description
+                "True if this client has sent a response to notifications about the current ISSU operation";
+              type boolean;
+            }
+            leaf is-issu-agent {
+              description
+                "True if this client is an ISSU infrastructure agent";
+              type boolean;
+            }
+          }
+        }
+      }
+    }
+    container committed {
+      description
+        "Calvados committed package(s) list for this node";
+      leaf-list si_committed_output {
+        type string;
+      }
+    }
+  }
+}

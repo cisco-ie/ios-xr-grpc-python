@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+   platform name, release, release-date, and deployment attributes are currently
+     for information only.  Functionality can be added to use, e.g. platform as
+     selection criteria for the filter definition block.
+   Only <namespace> && <module> are checked, i.e. namespace & module name.
+   <accept> & <reject> rules are read & used to evaluate collected capability
+     list according to the order appearing in this file.  Once a match is found,
+     the capability entry will be <accept>-ed or <reject>-ed accordingly.
+-->
+<platform name="default" release="6.2.1" release-date="2016-10-30" deployment="all">
+  <namespace-rules>
+    <reject/>
+    <accept/>
+  </namespace-rules>
+  <module-rules>
+    <reject>fpdserv_ctrace</reject>
+    <reject>^obfl$</reject>
+    <reject>show_trace_cm</reject>
+    <reject>show_trace_debug_agent</reject>
+    <reject>show_trace_instagt</reject>
+    <reject>show_trace_instmgr</reject>
+    <reject>show_trace_slice_manager</reject>
+    <reject>show_trace_vmm</reject>
+    <reject>ietf-netconf-with-defaults</reject>
+    <reject>iana-if-type</reject>
+    <reject>ietf-inet-types</reject>
+    <reject>ietf-interfaces</reject>
+    <reject>ietf-netconf-monitoring</reject>
+    <reject>ietf-restconf-monitoring</reject>
+    <reject>ietf-syslog</reject>
+    <reject>ietf-yang-library</reject>
+    <reject>ietf-yang-smiv2</reject>
+    <reject>ietf-yang-types</reject>
+    <accept>.*</accept>
+  </module-rules>
+  <schemas-rules>
+    <reject>ietf-netconf-monitoring</reject>
+    <reject>ietf-restconf-monitoring</reject>
+    <reject>ietf-yang-library</reject>
+  </schemas-rules>
+</platform>

@@ -17,6 +17,8 @@ Options:
 
 Example:
 python cli.py -i 192.168.122.214 -p 57400 -u cisco -pw cisco -r get-oper --file json/get-oper-mpls-te.json
+
+Note: Version 1.0 only supports get-oper and get-config RPCs
 """
 
 import json

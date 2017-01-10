@@ -1,0 +1,6 @@
+{
+        "Cisco-IOS-XR-mpls-te-oper:mpls-te": {        
+          "p2p-p2mp-tunnel": {
+          }
+        }
+}

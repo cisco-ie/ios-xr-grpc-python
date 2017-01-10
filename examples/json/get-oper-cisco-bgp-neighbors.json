@@ -1,0 +1,14 @@
+{
+        "Cisco-IOS-XR-ipv4-bgp-oper:bgp": {
+          "instances": {
+            "instance": {
+              "instance-active": {
+                "default-vrf": {
+                  "neighbors": {
+            }
+          }
+        }
+      }
+    }
+  }
+}

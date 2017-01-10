@@ -1,0 +1,31 @@
+{
+ "Cisco-IOS-XR-ipv4-bgp-cfg:bgp": {
+  "instance": [
+   {
+    "instance-name": "default",
+    "instance-as": [
+     {
+      "four-byte-as": [
+       {
+        "default-vrf": {
+         "bgp-entity": {
+          "neighbors": {
+           "neighbor": [
+            {
+             "neighbor-afs": {
+              "neighbor-af": [
+              ]
+             }
+            } 
+           ]
+          }
+         }
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

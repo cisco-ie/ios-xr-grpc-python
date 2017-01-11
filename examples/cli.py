@@ -18,7 +18,7 @@ Options:
 Example:
 python cli.py -i 192.168.122.214 -p 57400 -u cisco -pw cisco -r get-oper --file json/get-oper-mpls-te.json
 
-Note: Version 1.0 only supports get-oper and get-config RPCs
+Note: Version 1.0 supports get-oper, get-config, and merge-config RPCs, replace-config hopefully coming soon
 """
 
 import json
@@ -93,10 +93,29 @@ def main():
                 'get-oper argument must include --file option and json file to filter yang operational namespace'
                 )
         try:
-            err, result = client.mergeconfig(path)
+            err = client.mergeconfig(path)
             if err:
                 print err
-            print result
+            #print result
+        except AbortionError:
+            print(
+                'Unable to connect to local box, check your gRPC destination.'
+                )
+
+    if RPC == "replace-config":
+
+        if arguments['--file']:
+            file = arguments['--file']
+            path = open(file).read()
+        else:
+            path = 'Error'
+            print(
+                'get-oper argument must include --file option and json file to filter yang operational namespace'
+                )
+        try:
+            err = client.replaceconfig(path)
+            if err:
+                print err
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'

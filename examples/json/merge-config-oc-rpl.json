@@ -1,0 +1,21 @@
+{  
+    "openconfig-routing-policy:routing-policy": {
+        "policy-definitions": {
+            "policy-definition": [
+                {
+                "name": "TEST",
+                "statements": {
+                    "statement": [
+                        {
+                        "name": "Testing",
+                        "conditions": {
+                            "call-policy": "med100"
+                        }
+                    }
+                  ]
+                }
+            }
+          ]
+        }
+    }
+}

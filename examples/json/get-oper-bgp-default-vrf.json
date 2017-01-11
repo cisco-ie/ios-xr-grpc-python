@@ -1,0 +1,33 @@
+{
+        "Cisco-IOS-XR-ipv4-bgp-oper:bgp": {
+          "instances": {
+            "instance": {
+              "instance-active": {
+                "default-vrf": {
+                  "afs": {
+                    "af": {
+                      "networks": {
+                        "network": [
+                          {
+                          "network": {
+                          },
+                          "af-name": {
+                          },
+                          "bgp-prefix": {
+                            "prefix-length": {
+                            }
+                          },
+                          "local-peers-advertised-to": {
+                          }
+                        }
+                      ]
+                    }  
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}
+

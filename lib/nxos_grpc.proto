@@ -1,0 +1,211 @@
+
+syntax = "proto3";
+
+package NXOSExtensibleManagabilityService;
+
+service gRPCConfigOper {
+
+    rpc GetConfig(GetConfigArgs) returns(stream GetConfigReply) {};
+    rpc Get(GetArgs) returns(stream GetReply){};
+    rpc GetOper(GetOperArgs) returns(stream GetOperReply) {};
+    rpc EditConfig(EditConfigArgs) returns(EditConfigReply) {};
+    rpc DeleteConfig(DeleteConfigArgs) returns(DeleteConfigReply) {};
+    rpc CopyConfig(CopyConfigArgs) returns(CopyConfigReply) {};
+    rpc StartSession(SessionArgs) returns(SessionReply) {};
+    rpc CloseSession(CloseSessionArgs) returns (CloseSessionReply) {};
+    rpc KillSession(KillArgs) returns(KillReply) {};
+    rpc Lock(LockArgs) returns(LockReply) {};
+    rpc UnLock(UnLockArgs) returns(UnLockReply) {};
+    rpc Commit(CommitArgs) returns(CommitReply) {};
+    rpc Validate(ValidateArgs) returns(ValidateReply) {};
+    rpc Abort(AbortArgs) returns(AbortReply) {};
+
+}
+
+message GetConfigArgs
+ {
+     string YangPath=1;
+     int64 ReqID = 2;
+     string Source=3;
+  }
+message GetConfigReply
+ {
+     int64 ReqID = 1;
+     string YangData = 2;
+     string Errors = 3;
+  }
+
+message GetOperArgs
+ {
+     string YangPath=1;
+     int64 ReqID = 2;
+   }
+
+message GetOperReply
+  {
+      int64 ReqID = 1;
+      string YangData = 2;
+      string Errors = 3;
+    }
+message GetArgs
+ {
+     string YangPath=1;
+     int64 ReqID = 2;
+  }
+message GetReply
+ {
+     int64 ReqID = 1;
+     string YangData = 2;
+     string Errors = 3;
+  }
+
+message EditConfigArgs
+ {
+    string YangPath=1;
+    string Operation=2;
+    int64 SessionID = 3;
+    int64 ReqID = 4;
+    string Target=5;
+    string DefOp=6;
+    string ErrorOp=7;
+  }
+
+message EditConfigReply
+ {
+    int64 ReqID = 1;
+    string YangData=2;
+    string Errors = 3;
+  }
+
+message DeleteConfigArgs
+ {
+    int64 SessionID=1;
+    int64 ReqID= 2;
+    string Target=3;
+  }
+
+message DeleteConfigReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+message CopyConfigArgs
+ {
+    int64 SessionID=1;
+    int64 ReqID=2;
+    string Source=3;
+    string Target=4;
+  }
+
+message CopyConfigReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+
+message LockArgs
+ {
+    int64 SessionID=1;
+    int64 ReqID=2;
+    string Target=3;
+  }
+
+message LockReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+
+
+message UnLockArgs
+ {
+    int64 SessionID=1;
+    int64 ReqID=2;
+    string Target=3;
+  }
+
+message UnLockReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+
+
+message SessionArgs
+ {
+    int64 ReqID = 1;
+  }
+
+message SessionReply
+ {
+    int64 ReqID = 1;
+    int64 SessionID=2;
+    string Errors = 3;
+  }
+ message CloseSessionArgs
+   {
+       int64 ReqID = 1;
+       int64 SessionID=2;
+     }
+
+ message CloseSessionReply
+   {
+       int64 ReqID = 1;
+       string YangData=2;
+       string Errors = 3;
+     }
+message KillArgs
+ {
+    int64 SessionID=1;
+    int64 SessionIDToKill=2;
+    int64 ReqID=3;
+  }
+
+message KillReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+message ValidateArgs
+ {
+    int64 SessionID=1;
+    int64 ReqId=2;
+  }
+
+message ValidateReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+message CommitArgs
+ {
+    int64 SessionID=1;
+    int64 ReqId=2;
+  }
+
+message CommitReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+
+message AbortArgs
+ {
+    int64 SessionID=1;
+    int64 ReqId=2;
+  }
+
+message AbortReply
+ {
+    int64 ReqID=1;
+    string YangData=2;
+    string Errors=3;
+  }
+

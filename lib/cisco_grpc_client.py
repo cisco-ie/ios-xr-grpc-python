@@ -21,11 +21,11 @@
 
 
 import grpc
+from . import ems_grpc_pb2
+from . import json_format
+from . import ems_grpc_pb2
+from . import telemetry_pb2
 from grpc.beta import implementations
-import ems_grpc_pb2
-import protobuf_json
-import ems_grpc_pb2
-import telemetry_pb2
 
 class CiscoGRPCClient(object):
     """This class creates grpc calls using python.
@@ -103,7 +103,8 @@ class CiscoGRPCClient(object):
                 telemetry_pb = telemetry_pb2.Telemetry()
                 telemetry_pb.ParseFromString(segment.data)
                 # Return in JSON format instead of protobuf.
-                yield protobuf_json.pb2json(telemetry_pb)
+                yield json_format.MessageToJson(telemetry_pb)
+
 
     def connectivityhandler(self, callback):
         """Passing of a callback to monitor connectivety state updates.

@@ -22,8 +22,8 @@ def main():
     try:
         err, result = client.getconfig(path)
         if err:
-            print err
-        print json.dumps(json.loads(result))
+            print(err)
+        print(json.dumps(json.loads(result)))
     except AbortionError:
         print(
             'Unable to connect to local box, check your gRPC destination.'

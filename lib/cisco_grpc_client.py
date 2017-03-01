@@ -1,3 +1,4 @@
+#!bin/env
 # Copyright 2016 Cisco Systems All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -19,6 +20,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
+""" Libraries to connect XR gRPC server """
 
 import grpc
 from . import ems_grpc_pb2
@@ -58,7 +60,7 @@ class CiscoGRPCClient(object):
             self._port = port
             self._channel = implementations.insecure_channel(self._host, self._port)
         self._stub = ems_grpc_pb2.beta_create_gRPCConfigOper_stub(self._channel)
-        self._timeout = int(timeout)
+        self._timeout = float(timeout)
         self._metadata = [('username', user), ('password', password)]
 
     def __repr__(self):

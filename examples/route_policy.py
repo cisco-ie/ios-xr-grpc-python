@@ -6,7 +6,10 @@ This module needs to be able to do a few things using gRPC Openconfig modules.
 4. It needs to use templating to create new policies and apply to upload them in the end.
 """
 import json
-from collections import OrderedDict
+try:
+    from collections import OrderedDict
+except ImportError:
+    from ordereddict import OrderedDict
 import sys
 sys.path.insert(0, '../')
 from lib.cisco_grpc_client import CiscoGRPCClient
@@ -36,7 +39,7 @@ class RoutePolicy(object):
         path = '{"openconfig-routing-policy:routing-policy": [null]}'
         err, result = self.client.getconfig(path)
         if err:
-            print err
+            print(err)
         policies = json.loads(result, object_pairs_hook=OrderedDict)
         return policies
 
@@ -45,9 +48,9 @@ class RoutePolicy(object):
         """
         bgp_policies = self.get_policies()
         policy_definitions = bgp_policies['openconfig-routing-policy:routing-policy']['policy-definitions']['policy-definition']
-        print '\nPolicy Names:\n'
+        print('\nPolicy Names:\n')
         for policy in policy_definitions:
-            print 'Name: %s' % policy['name']
+            print('Name: %s' % policy['name'])
 
     def detail_policy(self, policy_name):
         """Prints the full json of a policy in Openconfig and returns it
@@ -60,7 +63,7 @@ class RoutePolicy(object):
         policy_definitions = bgp_policies['openconfig-routing-policy:routing-policy']['policy-definitions']['policy-definition']
         for policy in policy_definitions:
             if policy_name == policy['name']:
-                print json.dumps(policy, indent=4, separators=(',', ': '))
+                print(json.dumps(policy, indent=4, separators=(',', ': ')))
                 inner = json.dumps(policy)
         template = '{"openconfig-routing-policy:routing-policy": {"policy-definitions": {"policy-definition": [%s]}}}' % inner
         return json.dumps(json.loads(template, object_pairs_hook=OrderedDict), indent=4, separators=(',', ': '))
@@ -73,7 +76,7 @@ class RoutePolicy(object):
         path = '{"openconfig-bgp:bgp": [null]}'
         err, result = self.client.getconfig(path)
         if err:
-            print err
+            print(err)
         bgp = json.loads(result, object_pairs_hook=OrderedDict)
         return bgp
 
@@ -82,9 +85,9 @@ class RoutePolicy(object):
         """
         bgp = self.get_neighbors()
         bgp_neighbors = bgp['openconfig-bgp:bgp']['neighbors']['neighbor']
-        print "\nNeighbor's\n"
+        print("\nNeighbor's\n")
         for neighbor in bgp_neighbors:
-            print 'Neighbor: %s AS: %s' % (neighbor['neighbor-address'], neighbor['config']['peer-as'])
+            print('Neighbor: %s AS: %s' % (neighbor['neighbor-address'], neighbor['config']['peer-as']))
 
     def detail_neighbor(self, neighbor_address):
         """Prints the full json of a neighbor in Openconfig format
@@ -95,7 +98,7 @@ class RoutePolicy(object):
         bgp_neighbors = bgp['openconfig-bgp:bgp']['neighbors']['neighbor']
         for neighbor in bgp_neighbors:
             if neighbor_address == neighbor['neighbor-address']:
-                print json.dumps(neighbor, indent=4, separators=(',', ': '))
+                print(json.dumps(neighbor, indent=4, separators=(',', ': ')))
                 inner = json.dumps(neighbor)
         template = '{"openconfig-bgp:bgp": {"neighbors": {"neighbor" :  [%s]}}}' % inner
         return json.dumps(json.loads(template, object_pairs_hook=OrderedDict), indent=4, separators=(',', ': '))
@@ -158,12 +161,12 @@ class RoutePolicy(object):
                     # Add the removed neighbors to list.
                     updated_neighbors.append((neighbor['neighbor-address'], ip_type, curr_policy))
         updated_neighbors = json.dumps(updated_neighbors)
-        print updated_neighbors
+        print(updated_neighbors)
         bgp_config = json.dumps(bgp)
         err = self.merge_config(bgp_config)
         if not err:
-            print err
-        print '\nNew Neighbor Detail:\n'
+            print(err)
+        print('\nNew Neighbor Detail:\n')
         self.detail_neighbor(neighbor_address)
 
     def multiple_policies(self, policies, neighbor):
@@ -186,7 +189,7 @@ class RoutePolicy(object):
             json_policy = json.loads(json_policy, object_pairs_hook=OrderedDict)
             conditions.append(json_policy)
         multi_policy = json.dumps(shell)
-        print self.merge_config(multi_policy)
+        print(self.merge_config(multi_policy))
         return policy_name
 
 def main():
@@ -197,19 +200,19 @@ def main():
     route = RoutePolicy('localhost', 57777, 'vagrant', 'vagrant')
     # List  Policies from Router
     route.list_policies()
-    print '\nnext function\n'
+    print('\nnext function\n')
     # Get the full json object of the policy, allows for manipulation
     policy = route.detail_policy('TEST')
-    print '\nnext function\n'
+    print('\nnext function\n')
     # List BGP neighbors
     route.list_neighbors()
-    print '\nnext function\n'
+    print('\nnext function\n')
     # Get the full json object of the BGP neighbor, allows for manipulation
     route.detail_neighbor('11.1.1.2')
-    print '\nnext function\n'
+    print('\nnext function\n')
     # Apply multiple policies to a single neighbor interface
     route.neighbor_policy('11.1.1.2', ['TEST', 'SEND-MED-IGP'], 'export-policy')
-    print '\nnext function\n'
+    print('\nnext function\n')
     # Store policy in json file to modify
     policy_file = open('policy.json', 'w')
     policy_file.write(policy)

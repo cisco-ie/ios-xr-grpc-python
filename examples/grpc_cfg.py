@@ -20,8 +20,8 @@ class Example(object):
         try:
             err, result = self.client.getconfig(path)
             if err:
-                print err
-            print json.dumps(json.loads(result))
+                print(err)
+            print(json.dumps(json.loads(result)))
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'
@@ -33,7 +33,7 @@ class Example(object):
             response = self.client.replaceconfig(path)
             if response.errors:
                 err = json.loads(response.errors)
-                print err
+                print(err)
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'
@@ -45,7 +45,7 @@ class Example(object):
             response = self.client.mergeconfig(path)
             if response.errors:
                 err = json.loads(response.errors)
-                print err
+                print(err)
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'
@@ -57,7 +57,7 @@ class Example(object):
             response = self.client.deleteconfig(path)
             if response.errors:
                 err = json.loads(response.errors)
-                print err
+                print(err)
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'

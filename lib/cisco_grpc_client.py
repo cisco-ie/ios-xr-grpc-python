@@ -178,9 +178,9 @@ class CiscoGRPCClient(object):
             :rtype: str
         """
         if not cli:
-        	message = ems_grpc_pb2.CommitReplaceArgs(yangjson=yangjson)
+            message = ems_grpc_pb2.CommitReplaceArgs(yangjson=yangjson)
         else:
-		message = ems_grpc_pb2.CommitReplaceArgs(cli=cli)
+            message = ems_grpc_pb2.CommitReplaceArgs(cli=cli)
         response = self._stub.CommitReplace(message, self._timeout, metadata=self._metadata)
         return response
 

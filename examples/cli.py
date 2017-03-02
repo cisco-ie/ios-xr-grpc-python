@@ -1,4 +1,4 @@
-""" 
+"""
 GRPC Client with command line options
 
 Usage:
@@ -26,14 +26,13 @@ from grpc.framework.interfaces.face.face import AbortionError
 import sys
 sys.path.insert(0, '../')
 from lib.cisco_grpc_client import CiscoGRPCClient
-
 from docopt import docopt
 
 def main():
 
     __version__ = 'GRPC_Client 1.0'
     arguments = docopt(__doc__, version=__version__)
-    
+
     IP = arguments['<router_IP>']
     TCP_PORT = int(arguments['<port>'])
     user = arguments['<user>']
@@ -51,13 +50,13 @@ def main():
         else:
             path = 'Error'
             print(
-                'get-oper argument must include --file option and json file to filter yang operational namespace' 
+                'get-oper argument must include --file option and json file to filter yang operational namespace'
                 )
         try:
             err, result = client.getoper(path)
             if err:
-                print err
-            print result
+                print(err)
+            print(result)
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'
@@ -69,14 +68,14 @@ def main():
             file = arguments['--file']
             path = open(file).read()
 #            path = open('json/' + file).read()
-        else:    
-            path = "" 
+        else:
+            path = ""
 
         try:
             err, result = client.getconfig(path)
             if err:
-                print err
-            print result
+                print(err)
+            print(result)
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'
@@ -95,7 +94,7 @@ def main():
         try:
             err = client.mergeconfig(path)
             if err:
-                print err
+                print(err)
             #print result
         except AbortionError:
             print(
@@ -115,7 +114,7 @@ def main():
         try:
             err = client.replaceconfig(path)
             if err:
-                print err
+                print(err)
         except AbortionError:
             print(
                 'Unable to connect to local box, check your gRPC destination.'

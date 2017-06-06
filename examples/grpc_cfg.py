@@ -5,10 +5,7 @@ The example is using XRdocs vagrant topology for all the configurations
 '''
 from grpc.framework.interfaces.face.face import AbortionError
 import json
-from time import sleep
-import sys
-sys.path.insert(0, '../')
-from lib.cisco_grpc_client import CiscoGRPCClient
+from iosxr_grpc.cisco_grpc_client import CiscoGRPCClient
 
 
 class Example(object):

@@ -10,15 +10,13 @@ try:
     from collections import OrderedDict
 except ImportError:
     from ordereddict import OrderedDict
-import sys
-sys.path.insert(0, '../')
-from lib.cisco_grpc_client import CiscoGRPCClient
+from iosxr_grpc.cisco_grpc_client import CiscoGRPCClient
 
 
 class RoutePolicy(object):
     """Class to manipulate route policy and bgp neighbors using openconfig
     """
-    def __init__(self, host, port, username, password):
+    def __init__(, host, port, username, password):
         """This class creates a grpc client for the functions to use.
             :param host: The ip address for the device.
             :param port: The port for the device.

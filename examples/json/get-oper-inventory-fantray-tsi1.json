@@ -1,0 +1,14 @@
+{
+ "Cisco-IOS-XR-invmgr-oper:inventory": {
+  "racks": {
+   "rack": {
+    "fantray": {
+     "slot": {
+      "tsi1s": {
+      }
+     }
+    }
+   }
+  }
+ }
+}

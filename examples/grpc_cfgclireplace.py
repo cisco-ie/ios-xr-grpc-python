@@ -3,9 +3,7 @@ for tls and how to put into the class and get information from the box.
     """
     import json
     from grpc.framework.interfaces.face.face import AbortionError
-    import sys
-    sys.path.insert(0, '../')
-    from lib.cisco_grpc_client import CiscoGRPCClient
+    from iosxr_grpc.cisco_grpc_client import CiscoGRPCClient
 
     def main():
             '''

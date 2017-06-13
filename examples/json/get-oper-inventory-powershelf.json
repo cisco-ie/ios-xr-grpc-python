@@ -1,0 +1,12 @@
+{
+ "Cisco-IOS-XR-invmgr-oper:inventory": {
+  "racks": {
+   "rack": {
+    "powershelf": {
+     "slot": {
+     }
+    }
+   }
+  }
+ }
+}

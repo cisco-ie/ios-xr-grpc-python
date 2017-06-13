@@ -1,0 +1,36 @@
+{
+ "Cisco-IOS-XR-invmgr-oper:inventory": {
+  "racks": {
+   "rack": [
+    {
+     "name": "0",
+     "powershelf": {
+      "slot": [
+       {
+        "name": "7",
+        "tsi1s": {
+         "tsi1": [
+          {
+           "name": "6010001",
+           "tsi2s": {
+            "tsi2": [
+             {
+              "name": "8190009",
+              "attributes": {
+               "env-sensor-info": {
+               }
+              }
+             }
+            ]
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

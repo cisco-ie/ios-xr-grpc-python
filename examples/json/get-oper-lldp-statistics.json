@@ -1,0 +1,13 @@
+{
+ "Cisco-IOS-XR-ethernet-lldp-oper:lldp": {
+  "nodes": {
+   "node": [
+    {
+     "node-name": "0/RP0/CPU0",
+     "statistics": {
+     }
+    }
+   ]
+  }
+ }
+}

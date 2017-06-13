@@ -1,0 +1,56 @@
+{
+ "Cisco-IOS-XR-invmgr-oper:inventory": {
+  "racks": {
+   "rack": [
+    {
+     "name": "0",
+     "powershelf": {
+      "slot": [
+       {
+        "name": "7",
+        "tsi1s": {
+         "tsi1": [
+          {
+           "name": "6010001",
+           "tsi2s": {
+            "tsi2": [
+             {
+              "name": "9260001",
+              "attributes": {
+               "inv-asset-bag": {
+                "manufacturer-assembly-number": {
+                },
+                "manufacturer-common-language-equipment-identifier": {
+                }
+               },
+               "inv-basic-bag": {
+                "description": {
+                },
+                "name": {
+                },
+                "hardware-revision": {
+                },
+                "serial-number": {
+                },
+                "manufacturer-name": {
+                },
+                "model-name": {
+                },
+                "is-field-replaceable-unit": {
+                }
+               }
+              }
+             }
+            ]
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

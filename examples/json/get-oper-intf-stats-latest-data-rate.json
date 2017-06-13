@@ -1,0 +1,12 @@
+{
+ "Cisco-IOS-XR-infra-statsd-oper:infra-statistics": {
+  "interfaces": {
+   "interface": {
+    "latest": {
+     "data-rate": {
+     }
+    }
+   }
+  }
+ }
+}

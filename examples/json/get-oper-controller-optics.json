@@ -1,4 +1,10 @@
 {
-        "Cisco-IOS-XR-controller-optics-oper:optics-oper": {
-    }
+ "Cisco-IOS-XR-controller-optics-oper:optics-oper": {
+  "optics-ports": {
+   "optics-port": [
+   {
+   }
+  ]
+  }
+ }
 }

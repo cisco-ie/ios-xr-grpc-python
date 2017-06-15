@@ -1,0 +1,20 @@
+{
+ "Cisco-IOS-XR-infra-statsd-oper:infra-statistics": {
+  "interfaces": {
+   "interface": {
+    "latest": {
+     "generic-counters": {
+      "output-drops": {
+      },
+      "output-queue-drops": {
+      },
+      "input-drops": {
+      },
+      "input-queue-drops": {
+      }
+     }
+    }
+   }
+  }
+ }
+}

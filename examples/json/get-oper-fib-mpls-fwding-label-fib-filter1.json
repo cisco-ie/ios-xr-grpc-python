@@ -1,0 +1,40 @@
+{
+ "Cisco-IOS-XR-fib-common-oper:mpls-forwarding": {
+  "nodes": {
+   "node": [
+    {
+     "node-name": {
+     },
+     "label-fib": {
+      "forwarding-details": {
+       "forwarding-detail": [
+       {
+        "label-value": {
+        },
+        "label-information": [
+        {
+         "local-label": {
+         },
+         "outgoing-interface": {
+         },
+         "tx-bytes": {
+         },
+         "tx-packets": {
+         },
+         "outgoing-label-string": {
+         },
+         "prefix-or-id": {
+         },
+         "label-information-next-hop-string": {
+         }
+        }
+       ]
+      }
+     ]
+    }
+  }
+ }
+ ]
+}
+}
+}

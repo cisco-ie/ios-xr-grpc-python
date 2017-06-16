@@ -21,12 +21,10 @@ python cli.py -i 192.168.122.214 -p 57400 -u cisco -pw cisco -r get-oper --file 
 Note: Version 1.0 supports get-oper, get-config, and merge-config RPCs, replace-config hopefully coming soon
 """
 
-import json
 from grpc.framework.interfaces.face.face import AbortionError
-import sys
-sys.path.insert(0, '../')
-from lib.cisco_grpc_client import CiscoGRPCClient
+from iosxr_grpc.cisco_grpc_client import CiscoGRPCClient
 from docopt import docopt
+
 
 def main():
 
@@ -50,8 +48,7 @@ def main():
         else:
             path = 'Error'
             print(
-                'get-oper argument must include --file option and json file to filter yang operational namespace'
-                )
+                'get-oper argument must include --file option and json file to filter yang operational namespace')
         try:
             err, result = client.getoper(path)
             if err:
@@ -59,8 +56,7 @@ def main():
             print(result)
         except AbortionError:
             print(
-                'Unable to connect to local box, check your gRPC destination.'
-                )
+                'Unable to connect to local box, check your gRPC destination.')
 
     if RPC == "get-config":
 
@@ -78,8 +74,7 @@ def main():
             print(result)
         except AbortionError:
             print(
-                'Unable to connect to local box, check your gRPC destination.'
-                )
+                'Unable to connect to local box, check your gRPC destination.')
 
     if RPC == "merge-config":
 
@@ -89,17 +84,15 @@ def main():
         else:
             path = 'Error'
             print(
-                'get-oper argument must include --file option and json file to filter yang operational namespace'
-                )
+                'get-oper argument must include --file option and json file to filter yang operational namespace')
         try:
             err = client.mergeconfig(path)
             if err:
                 print(err)
-            #print result
+            # print result
         except AbortionError:
             print(
-                'Unable to connect to local box, check your gRPC destination.'
-                )
+                'Unable to connect to local box, check your gRPC destination.')
 
     if RPC == "replace-config":
 
@@ -109,16 +102,15 @@ def main():
         else:
             path = 'Error'
             print(
-                'get-oper argument must include --file option and json file to filter yang operational namespace'
-                )
+                'get-oper argument must include --file option and json file to filter yang operational namespace')
         try:
             err = client.replaceconfig(path)
             if err:
                 print(err)
         except AbortionError:
             print(
-                'Unable to connect to local box, check your gRPC destination.'
-                )
+                'Unable to connect to local box, check your gRPC destination.')
+
 
 if __name__ == '__main__':
     main()

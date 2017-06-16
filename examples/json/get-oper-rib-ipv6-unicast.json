@@ -1,0 +1,66 @@
+{
+ "Cisco-IOS-XR-ip-rib-ipv6-oper:ipv6-rib": {
+  "vrfs": {
+   "vrf": [
+    {
+     "vrf-name": "default",
+     "afs": {
+      "af": [
+       {
+        "af-name": "IPv6",
+        "safs": {
+         "saf": [
+          {
+           "saf-name": "Unicast",
+           "ip-rib-route-table-names": {
+            "ip-rib-route-table-name": [
+             {
+              "route-table-name": "default",
+              "protocol": {
+               "local": {
+                "non-as": {
+                 "protocol-routes": {
+                  "protocol-route": [
+                   {
+                    "prefix": {
+                    },
+                    "prefix-length": {
+                    },
+                    "protocol-name": {
+                    },
+                    "tag": {
+                    },
+                    "distance": {
+                    },
+                    "metric": {
+                    },
+                    "route-path": {
+                     "ipv6-rib-edm-path": [
+                      {
+                       "information-source": {
+                       },
+                       "interface-name": {
+                       }
+                      }
+                     ]
+                    }
+                   }
+                  ]
+                 }
+                }
+               }
+              }
+             }
+            ] 
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ } 
+} 

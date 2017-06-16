@@ -1,0 +1,15 @@
+{
+ "Cisco-IOS-XR-procmem-oper:processes-memory": {
+  "nodes": {
+   "node": [
+    {
+     "node-name": "0/RP0/CPU0",
+     "process-ids": {
+      "process-id": {
+      }
+     }
+    }
+   ]
+  }
+ }
+}

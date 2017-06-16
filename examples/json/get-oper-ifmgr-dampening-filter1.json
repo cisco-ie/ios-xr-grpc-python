@@ -1,0 +1,22 @@
+{
+ "Cisco-IOS-XR-ifmgr-oper:interface-dampening": {
+  "interfaces": {
+   "interface": [
+   {
+    "interface-name": {
+    },
+    "if-dampening": {
+     "state-transition-count": {
+     },
+     "last-state-transition-time": {
+     },
+     "interface-dampening": {
+      "flaps": {
+      }
+     }
+    }
+   }
+  ]
+  }
+ }
+}

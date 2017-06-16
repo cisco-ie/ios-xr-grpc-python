@@ -1,0 +1,62 @@
+{
+ "Cisco-IOS-XR-ip-rib-ipv4-oper:rib": {
+  "vrfs": {
+   "vrf": [
+    {
+     "vrf-name": "default",
+     "afs": {
+      "af": [
+       {
+        "af-name": "IPv4",
+        "safs": {
+         "saf": [
+          {
+           "saf-name": "Unicast",
+           "ip-rib-route-table-names": {
+            "ip-rib-route-table-name": [
+             {
+              "route-table-name": "default",
+              "routes": {
+               "route": [
+               {
+                "prefix": {
+                },
+                "prefix-length": {
+                },
+                "protocol-name": {
+                },
+                "distance": {
+                },
+                "metric": {
+                },
+                "instance": {
+                },
+                "tag": {
+                },
+                "route-path": {
+                 "ipv4-rib-edm-path": [
+                 {
+                  "interface-name": {
+                  },
+                  "information-source": {
+                  }
+                 }
+                 ]
+                }
+               }
+               ]
+              }
+             }
+            ]
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "Cisco-IOS-XR-fib-common-oper:fib": {
+  "nodes": {
+   "node": {
+    "protocols": {
+     "protocol": {
+      "vrfs": {
+       "vrf": {
+       "ip-prefix-briefs": {
+        "ip-prefix-brief": [
+        {
+         "prefix": {
+         },
+         "prefix-length": {
+         },
+         "fib-entry-path": {
+          "fib-sh-tbl-path": [
+          {
+           "more-detail-about-path": {
+            "ip-address-to-recurse": {
+            },
+            "interface-associated-path": {
+            }
+           },
+           "mpls-information-for-path": {
+            "local-lable": {
+            }
+           }
+          }
+         ]
+        }
+       }
+       ]
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ }
+}

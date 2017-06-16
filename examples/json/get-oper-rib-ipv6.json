@@ -1,0 +1,7 @@
+{
+        "Cisco-IOS-XR-ip-rib-ipv6-oper:ipv6-rib": {
+          "vrfs": {
+          }
+    }
+
+}

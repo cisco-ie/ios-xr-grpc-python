@@ -1,0 +1,17 @@
+{
+ "Cisco-IOS-XR-fretta-bcm-dpa-hw-resources-oper:dpa": {
+  "stats": {
+   "nodes": {
+    "node": [
+     {
+      "node-name": "0/0/CPU0",
+      "asic-statistics": {
+       "asic-statistics-detail-for-npu-ids": {
+       }  
+      }
+     }
+    ]
+   }
+  }
+ }
+}

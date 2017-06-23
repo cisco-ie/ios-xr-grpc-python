@@ -1,0 +1,10 @@
+{
+ "Cisco-IOS-XR-fretta-bcm-dpa-hw-resources-oper:dpa": {
+  "stats": {
+   "nodes": {
+    "node": {
+    }
+   }
+  }
+ }
+}

@@ -4,6 +4,7 @@ GRPC Client with command line options
 
 Usage:
     client.py -i <router_IP> -p <port> -u <user> -pw <password> -r <rpc> [--file <json_file>]
+    client.py -i <router_IP> -p <port> -u <user> -pw <password> -r <rpc> [<show_cmd>]
     client.py (-h | --help)
 
 Options:
@@ -14,6 +15,7 @@ Options:
     -u           Username to connect with
     -pw          User's password
     -r           RPC call to make.  Valid RPCS: get-oper, get-config, merge-config, replace-config
+    --cmd        Optional 'show command'
     --file	 Optional json file for filtered namespace requests.  Client is expecting these files to be stored in json/ folder
 
 Example:
@@ -40,7 +42,7 @@ def main():
     password = arguments['<password>']
     RPC = arguments['<rpc>']
 
-    client = CiscoGRPCClient(IP, TCP_PORT, 600, user, password)
+    client = CiscoGRPCClient(IP, TCP_PORT, 10, user, password)
 
     if RPC == "get-oper":
 
@@ -120,6 +122,23 @@ def main():
             print(
                 'Unable to connect to local box, check your gRPC destination.'
                 )
+    if RPC == "show-cmd":
+        if arguments['<show_cmd>']:
+            path = arguments['<show_cmd>']
+            print('Path: ' + str(path))
+        else:
+            print('error')
+
+        try:
+            err, result = client.showcmdjsonoutput(path)
+            if err:
+                print(err)
+            print(result)
+        except AbortionError:
+            print(
+                'Unable to connect to local box, check your gRPC destination.'
+                )
+
 
 if __name__ == '__main__':
     main()

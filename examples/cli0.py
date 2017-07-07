@@ -4,7 +4,7 @@ GRPC Client with command line options
 
 Usage:
     client.py -i <router_IP> -p <port> -u <user> -pw <password> -r <rpc> [--file <json_file>] [--t <timeout>]
-    client.py -i <router_IP> -p <port> -u <user> -pw <password> -r <rpc> [<show_cmd>]
+    client.py -i <router_IP> -p <port> -u <user> -pw <password> -r <rpc> [<show_cmd>] [--t <timeout>]
     client.py (-h | --help)
 
 Options:

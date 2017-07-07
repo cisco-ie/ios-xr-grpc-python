@@ -1,0 +1,17 @@
+{
+ "Cisco-IOS-XR-fretta-bcm-dpa-resources-oper:dpa": {
+  "resources": {
+   "nodes": {
+    "node": [
+    {
+     "node-name": "0/0/CPU0",
+     "table-datas": {
+      "table-data": {
+       }
+      }
+     }
+    ]
+   }
+  }  
+ }
+}

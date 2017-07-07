@@ -1,0 +1,27 @@
+{
+ "Cisco-IOS-XR-fretta-bcm-dpa-hw-resources-oper:dpa": {
+  "stats": {
+   "nodes": {
+    "node": [
+     {
+      "node-name": "0/0/CPU0",
+      "hw-resources-datas": {
+       "hw-resources-data": [
+        {
+         "resource": "lem",
+         "resource-id": {
+         },
+         "name": "lem",
+         "num-npus": {
+         },
+         "npu-hwr": {
+         }
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ }
+}

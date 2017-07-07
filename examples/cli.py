@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 GRPC Client with command line options
 
@@ -37,7 +38,7 @@ def main():
     password = arguments['<password>']
     RPC = arguments['<rpc>']
 
-    client = CiscoGRPCClient(IP, TCP_PORT, 10, user, password)
+    client = CiscoGRPCClient(IP, TCP_PORT, 600, user, password)
 
     if RPC == "get-oper":
 

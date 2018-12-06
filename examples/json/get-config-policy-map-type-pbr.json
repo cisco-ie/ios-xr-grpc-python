@@ -1,0 +1,11 @@
+{
+  "Cisco-IOS-XR-infra-policymgr-cfg:policy-manager": {
+   "policy-maps": {
+    "policy-map": [
+     {
+      "type": "pbr" 
+     }
+    ]
+   }
+  }
+ }

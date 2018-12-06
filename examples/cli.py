@@ -45,7 +45,6 @@ def main():
         if arguments['--file']:
             file = arguments['--file']
             path = open(file).read()
-#            path = open('json/' + file).read()
         else:
             path = 'Error'
             print(
@@ -64,7 +63,6 @@ def main():
         if arguments['--file']:
             file = arguments['--file']
             path = open(file).read()
-#            path = open('json/' + file).read()
         else:
             path = ""
 
@@ -112,6 +110,23 @@ def main():
             print(
                 'Unable to connect to local box, check your gRPC destination.')
 
+    if RPC == "delete-config":
+
+        if arguments['--file']:
+            file = arguments['--file']
+            path = open(file).read()
+        else:
+            path = 'Error'
+            print(
+                'get-oper argument must include --file option and json file to filter yang operational namespace')
+        try:
+            err = client.deleteconfig(path)
+            if err:
+                print(err)
+            # print result
+        except AbortionError:
+            print(
+                'Unable to connect to local box, check your gRPC destination.')
 
 if __name__ == '__main__':
     main()

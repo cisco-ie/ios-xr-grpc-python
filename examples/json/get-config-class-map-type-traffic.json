@@ -1,0 +1,11 @@
+{
+  "Cisco-IOS-XR-infra-policymgr-cfg:policy-manager": {
+   "class-maps": {
+    "class-map": [
+     {
+      "type": "traffic"
+     }
+    ]
+   }
+  }
+ }

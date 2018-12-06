@@ -1,0 +1,22 @@
+{
+  "Cisco-IOS-XR-infra-policymgr-cfg:policy-manager": {
+   "class-maps": {
+    "class-map": [
+     {
+      "type": "traffic"
+     }
+    ]
+   }
+  },
+  "Cisco-IOS-XR-infra-policymgr-cfg:policy-manager": {
+   "policy-maps": {
+    "policy-map": [
+     {
+      "type": "pbr" 
+     }
+    ]
+   }
+  },
+  "Cisco-IOS-XR-pbr-vrf-policy-cfg:vrf-policy": [null]
+ }
+

@@ -10,6 +10,6 @@ setup(name='iosxr_grpc',
       licencse='Apache 2.0',
       packages=['iosxr_grpc'],
       install_requires=[
-          'grpcio==1.0.0',
+          'grpcio==1.18.0',
       ],
       zip_safe=False)

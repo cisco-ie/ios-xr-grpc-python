@@ -17,6 +17,8 @@ Either download this repository or install with ```pip install iosxr_grpc```
 
 It is always recommended to work in a virtual environment with something like [virtualenv](https://virtualenv.pypa.io/en/stable/) or [pipenv](http://docs.pipenv.org/en/latest/).
 
+Install dependencies: pip install grpcio protobuf docopt
+
 
 ## gRPC Calls
 

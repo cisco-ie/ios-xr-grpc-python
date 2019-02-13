@@ -1,0 +1,26 @@
+{
+        "openconfig-interfaces:interfaces": {
+	  "interface": [
+          {
+      	    "name": {
+	    },
+	    "subinterfaces": {
+              "subinterface": [
+              {
+	       	"openconfig-if-ip:ipv4": {
+                  "addresses": {
+                    "address": [
+                    {
+		      "ip": {
+	             }
+		     }
+		    ]
+  		  }
+        }
+	      }
+	    ]
+       }
+     }
+   ]
+  }
+}

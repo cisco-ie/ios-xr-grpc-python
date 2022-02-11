@@ -11,6 +11,6 @@ setup(name='iosxr_grpc',
       packages=['iosxr_grpc'],
       install_requires=[
           'grpcio==1.18.0',
-          'protobuf==3.6.0',
+          'protobuf==3.15.0',
       ],
       zip_safe=False)

@@ -21,7 +21,8 @@ python cli.py -i 192.168.122.214 -p 57400 -u cisco -pw cisco -r get-oper --file 
 
 Note: Version 1.0 supports get-oper, get-config, and merge-config RPCs, replace-config hopefully coming soon
 """
-
+import sys
+sys.path.append('../')
 from grpc.framework.interfaces.face.face import AbortionError
 from iosxr_grpc.cisco_grpc_client import CiscoGRPCClient
 from docopt import docopt
